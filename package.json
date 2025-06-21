@@ -1,0 +1,8 @@
+{
+	"name": "room-radar",
+	"private": true,
+	"workspaces": [
+		"frontend",
+		"backend"
+	]
+}

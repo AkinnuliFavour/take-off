@@ -1,0 +1,20 @@
+# Node modules
+node_modules/
+.yarn/
+.pnp.*
+
+# Logs
+logs/
+*.log
+
+# Build outputs
+dist/
+build/
+.next/
+.vite/
+public/build/
+.cache/
+
+# Environment variables
+.env
+.env.local
