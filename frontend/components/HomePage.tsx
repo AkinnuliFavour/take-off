@@ -8,11 +8,13 @@ import {
   fadeIn,
   scaleIn,
 } from "@/components/animations/motion";
+import Image from "next/image";
 
 export default function HomePage() {
   return (
-    <div className="w-full h-full mx-auto">
-      <header className="bg-[url('/images/header-bg.svg')] bg-center bg-cover bg-no-repeat h-[400px] lg:h-screen flex flex-col relative lg:p-0 p-8 mb-20">
+    <div className="w-full h-full">
+
+      <header className="bg-[url('/images/header-bg.svg')] bg-center bg-cover bg-no-repeat h-[400px] lg:h-screen flex flex-col relative lg:p-0 p-8 ">
         <motion.h1
           className="font-semibold text-xl lg:text-3xl absolute top-8 left-8 lg:left-[92px]"
           variants={fadeInUp}
@@ -20,6 +22,13 @@ export default function HomePage() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
+          <Image
+            src="/images/logo.svg"
+            alt="Room Radar Logo"
+            width={32}
+            height={41}
+            className="inline-block mr-2"
+          />
           <span>Room</span>
           <span className="text-[#00FF11]">Radar</span>
         </motion.h1>
@@ -37,7 +46,7 @@ export default function HomePage() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            Find Your Pefect <br /> Off-Campus <br /> Home
+            Find Your Perfect <br /> Off-Campus <br /> Home
           </motion.p>
           <motion.p
             className="lg:hidden font-bold text-2xl mt-[7rem]"
@@ -75,6 +84,8 @@ export default function HomePage() {
           </motion.div>
         </motion.div>
       </header>
+
+
     </div>
   );
 }
