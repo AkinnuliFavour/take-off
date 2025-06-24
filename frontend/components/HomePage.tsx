@@ -154,6 +154,9 @@ export default function HomePage() {
         </div>
 
         <div className="lg:mt-[86px] lg:h-[618px] max-w-[1039px] relative p-8 hidden lg:block">
+          <h4 className="text-[#3B3B3B] font-bold text-[125px] leading-[41px] absolute left-1/3 top-10 tracking-wide">
+            Chiamaka
+          </h4>
           <div className="w-full">
             <motion.div
               className="relative"
@@ -186,7 +189,7 @@ export default function HomePage() {
               </motion.div>
             </motion.div>
             <motion.div
-              className="absolute z-5 bg-[#FFC403] text-black pl-[190px] pt-10 rounded-[20px] pb-16 pr-8 top-[97px] left-[200px] max-w-[886px]"
+              className="absolute z-5 bg-[#FFC403] text-black pl-[190px] pt-10 rounded-[20px] pb-18 pr-8 top-[97px] left-[200px] max-w-[886px]"
               variants={fadeIn}
               initial="hidden"
               whileInView="visible"
@@ -217,7 +220,7 @@ export default function HomePage() {
                 </ul>
               </div>
               <motion.p
-                className="font-semibold text-[25px] w-full text-center absolute left-0"
+                className="font-semibold text-[25px] w-full text-center absolute left-0 bottom-5"
                 variants={fadeInUp}
                 initial="hidden"
                 whileInView="visible"
@@ -229,6 +232,90 @@ export default function HomePage() {
             </motion.div>
           </div>
         </div>
+
+        <div className="lg:mt-[86px] lg:h-[618px] max-w-[1039px] relative p-8 hidden lg:block">
+          <h4 className="text-[#3B3B3B] font-bold text-[125px] leading-[41px] absolute left-1/3 top-10 tracking-wide">
+            Jerry TecH
+          </h4>
+          <div className="w-full">
+            <motion.div
+              className="relative"
+              style={{ zIndex: 10 }}
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <Image
+                src="/images/jerry.svg"
+                alt="Commentor Picture"
+                width={100}
+                height={100}
+                className="h-[455px] w-[342px] absolute z-10 top-0 -right-40"
+              />
+              <motion.div
+                className="bg-[#000000D4] absolute z-20 top-[21rem] -right-32 text-center rounded-[5px] w-[269px] h-[171px] flex flex-col items-center justify-center"
+                variants={scaleIn}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                <h4 className="font-semibold text-[23px]">Jerry Adebayo</h4>
+                <p className="text-2xl font-light italic">
+                  400 Level, OAU <br />
+                 Computer Science <br />
+                  Full Stack Dev. Framer
+                </p>
+              </motion.div>
+            </motion.div>
+            <motion.div
+              className="absolute z-5 bg-[#C0C0C0] text-black pr-[200px] pt-10 rounded-[20px] pb-18 pl-8 top-[97px] left-[200px] max-w-[886px]"
+              variants={fadeIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <h4 className="font-semibold text-[38px]">
+                Another &quot;Tech Bro&quot;
+              </h4>
+              <div className="text-[27px] font-medium flex flex-col">
+                <p className="font-normal">
+                  <span className="font-semibold">
+                    Jerry is that guy - Agba Senior dev.
+                  </span>{" "}
+                  He thought he had it all sorted. But when it came to getting a
+                  room near school?{" "}
+                  <span className="font-semibold">Tech failed him.</span>
+                </p>
+                <p className="font-normal">
+                  He saw a room on Whatsapp - looked good, decent price, even had
+                  &quot;Wi-Fi included.&quot;
+                </p>
+                <p className="font-normal">
+                  He paid fast to secure it <br />
+                  <span className="font-medium">When he arrived</span>
+                </p>
+                <ul className="list-disc pl-5 font-medium">
+                  <li>The room was already taken.</li>
+                  <li>The lanlord stopped replying.</li>
+                  <li>Jerry spent two week squatting with friends.</li>
+                  <li>And yeah... no-Wi-Fi.</li>
+                </ul>
+              </div>
+              <motion.p
+                className="font-semibold text-[25px] w-full text-center absolute left-0 bottom-5"
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                &quot;I automate everything... how did I not see this
+                coming?&quot;
+              </motion.p>
+            </motion.div>
+          </div>
+        </div>
+
       </motion.section>
     </div>
   );
