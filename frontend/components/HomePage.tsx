@@ -122,200 +122,359 @@ export default function HomePage() {
         viewport={{ once: true, amount: 0.3 }}
       >
         <div className="p-2 flex flex-col gap-4">
-          <div className="flex flex-col">
-            <motion.p
-              className="text-base font-medium lg:text-3xl"
-              variants={fadeInUp}
-            >
-              <span className="text-[#00FF11] font-semibold">Off-Campus</span>{" "}
-              life can feel like a maze of{" "}
-              <span className="text-[#FFC403] font-semibold">scams</span>,{" "}
-              <span className="text-[#FFC403] font-semibold">long walks</span>,
-              and{" "}
-              <span className="text-[#FFC403] font-semibold">hidden fees</span>.
-            </motion.p>
-            <motion.p
-              className="text-base font-medium lg:text-3xl lg:leading-14"
-              variants={fadeInUp}
-            >
-              All <span className="text-[#00FF11] font-semibold">Off-K</span>{" "}
-              kids all have one or two stories to tell, and some are worse than
-              others.
-            </motion.p>
-          </div>
+          <motion.p
+            className="text-base font-medium lg:text-3xl"
+            variants={fadeInUp}
+          >
+            <span className="text-[#00FF11] font-semibold">Off-Campus</span>{" "}
+            life can feel like a maze of{" "}
+            <span className="text-[#FFC403] font-semibold">scams</span>,{" "}
+            <span className="text-[#FFC403] font-semibold">long walks</span>,
+            and{" "}
+            <span className="text-[#FFC403] font-semibold">hidden fees</span>.
+          </motion.p>
+
+          <motion.p
+            className="text-base font-medium lg:text-3xl lg:leading-14"
+            variants={fadeInUp}
+          >
+            All <span className="text-[#00FF11] font-semibold">Off-K</span> kids
+            all have one or two stories to tell, and some are worse than others.
+          </motion.p>
 
           <motion.p className="font-medium lg:text-3xl" variants={fadeInUp}>
-            Maybe you too have your own story to tell, But think you’ve seen it
-            all?{" "}
-          </motion.p>
-          <motion.p className="font-medium lg:text-3xl" variants={fadeInUp}>
-            Meet -{" "}
+            Maybe you too have your own story to tell, But meet some real people
+            like you who&apos;ve faced similar issues.{" "}
           </motion.p>
         </div>
 
-        <div className="lg:mt-[86px] lg:h-[618px] max-w-[1039px] relative p-8 hidden lg:block">
-          <h4 className="text-[#3B3B3B] font-bold text-[125px] leading-[41px] absolute left-1/3 top-10 tracking-wide">
-            Chiamaka
-          </h4>
-          <div className="w-full">
-            <motion.div
-              className="relative"
-              style={{ zIndex: 10 }}
-              variants={fadeInUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <Image
-                src="/images/chiamaka.svg"
-                alt="Commentor Picture"
-                width={100}
-                height={100}
-                className="h-[455px] w-[342px] absolute z-10 top-0 left-0"
-              />
+        <div className="flex-col hidden xl:flex">
+
+          <div className="lg:mt-[86px] lg:h-[618px] max-w-[1039px] relative p-8">
+            <h4 className="text-[#3B3B3B] font-bold text-[125px] leading-[41px] absolute left-1/3 top-10 tracking-wide">
+              Chiamaka
+            </h4>
+            <div className="w-full">
               <motion.div
-                className="bg-[#000000D4] absolute z-20 top-[21rem] left-10 text-center rounded-[5px] w-[269px] h-[171px] flex flex-col items-center justify-center"
-                variants={scaleIn}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-              >
-                <h4 className="font-semibold text-[23px]">Chiamaka Oyenchi</h4>
-                <p className="text-2xl font-light italic">
-                  300 Level, FUTA <br />
-                  Mass Communication <br />
-                  Fashion Retailer
-                </p>
-              </motion.div>
-            </motion.div>
-            <motion.div
-              className="absolute z-5 bg-[#FFC403] text-black pl-[190px] pt-10 rounded-[20px] pb-18 pr-8 top-[97px] left-[200px] max-w-[886px]"
-              variants={fadeIn}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <h4 className="font-semibold text-[38px]">
-                Chiamaka&apos;s Nightmare
-              </h4>
-              <div className="text-[27px] font-medium flex flex-col">
-                <p className="font-semibold">
-                  300LVL Student. Good grades. Focused
-                </p>
-                <p className="text-[27px]">
-                  But when she finally had to live off-campus,{" "}
-                  <span className="font-semibold">Chaos</span>.
-                </p>
-                <ul className="list-disc pl-5">
-                  <li>She Joined 5 Whats&apos;app group</li>
-                  <li>
-                    Walked under the sun for hours checking for
-                    &quot;available&quot; rooms.
-                  </li>
-                  <li>Called 7 agents - 3 never showed up.</li>
-                  <li>
-                    Finally paid a ₦5,000 &quot;booking fee&quot; ... and got
-                    ghosted.
-                  </li>
-                </ul>
-              </div>
-              <motion.p
-                className="font-semibold text-[25px] w-full text-center absolute left-0 bottom-5"
+                className="relative"
+                style={{ zIndex: 10 }}
                 variants={fadeInUp}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
               >
-                &quot;I felt lost and cheated. I just wanted a safe, honest
-                place.&quot;
-              </motion.p>
-            </motion.div>
-          </div>
-        </div>
-
-        <div className="lg:mt-[86px] lg:h-[618px] max-w-[1039px] relative p-8 hidden lg:block">
-          <h4 className="text-[#3B3B3B] font-bold text-[125px] leading-[41px] absolute left-1/3 top-10 tracking-wide">
-            Jerry TecH
-          </h4>
-          <div className="w-full">
-            <motion.div
-              className="relative"
-              style={{ zIndex: 10 }}
-              variants={fadeInUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <Image
-                src="/images/jerry.svg"
-                alt="Commentor Picture"
-                width={100}
-                height={100}
-                className="h-[455px] w-[342px] absolute z-10 top-0 -right-40"
-              />
+                <Image
+                  src="/images/chiamaka.svg"
+                  alt="Commentor Picture"
+                  width={100}
+                  height={100}
+                  className="h-[455px] w-[342px] absolute z-10 top-0 left-0"
+                />
+                <motion.div
+                  className="bg-[#000000D4] absolute z-20 top-[21rem] left-10 text-center rounded-[5px] w-[269px] h-[171px] flex flex-col items-center justify-center"
+                  variants={scaleIn}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                >
+                  <h4 className="font-semibold text-[23px]">
+                    Chiamaka Oyenchi
+                  </h4>
+                  <p className="text-2xl font-light italic">
+                    300 Level, FUTA <br />
+                    Mass Communication <br />
+                    Fashion Retailer
+                  </p>
+                </motion.div>
+              </motion.div>
               <motion.div
-                className="bg-[#000000D4] absolute z-20 top-[21rem] -right-32 text-center rounded-[5px] w-[269px] h-[171px] flex flex-col items-center justify-center"
-                variants={scaleIn}
+                className="absolute z-5 bg-[#FFC403] text-black pl-[190px] pt-10 rounded-[20px] pb-18 pr-8 top-[97px] left-[200px] max-w-[886px]"
+                variants={fadeIn}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
               >
-                <h4 className="font-semibold text-[23px]">Jerry Adebayo</h4>
-                <p className="text-2xl font-light italic">
-                  400 Level, OAU <br />
-                 Computer Science <br />
-                  Full Stack Dev. Framer
-                </p>
+                <h4 className="font-semibold text-[38px]">
+                  Chiamaka&apos;s Nightmare
+                </h4>
+                <div className="text-[27px] font-medium flex flex-col">
+                  <p className="font-semibold">
+                    300LVL Student. Good grades. Focused
+                  </p>
+                  <p className="text-[27px]">
+                    But when she finally had to live off-campus,{" "}
+                    <span className="font-semibold">Chaos</span>.
+                  </p>
+                  <ul className="list-disc pl-5">
+                    <li>She Joined 5 Whats&apos;app group</li>
+                    <li>
+                      Walked under the sun for hours checking for
+                      &quot;available&quot; rooms.
+                    </li>
+                    <li>Called 7 agents - 3 never showed up.</li>
+                    <li>
+                      Finally paid a ₦5,000 &quot;booking fee&quot; ... and got
+                      ghosted.
+                    </li>
+                  </ul>
+                </div>
+                <motion.p
+                  className="font-semibold text-[25px] w-full text-center absolute left-0 bottom-5"
+                  variants={fadeInUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                >
+                  &quot;I felt lost and cheated. I just wanted a safe, honest
+                  place.&quot;
+                </motion.p>
               </motion.div>
-            </motion.div>
-            <motion.div
-              className="absolute z-5 bg-[#C0C0C0] text-black pr-[200px] pt-10 rounded-[20px] pb-18 pl-8 top-[97px] left-[200px] max-w-[886px]"
-              variants={fadeIn}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <h4 className="font-semibold text-[38px]">
-                Another &quot;Tech Bro&quot;
-              </h4>
-              <div className="text-[27px] font-medium flex flex-col">
-                <p className="font-normal">
-                  <span className="font-semibold">
-                    Jerry is that guy - Agba Senior dev.
-                  </span>{" "}
-                  He thought he had it all sorted. But when it came to getting a
-                  room near school?{" "}
-                  <span className="font-semibold">Tech failed him.</span>
-                </p>
-                <p className="font-normal">
-                  He saw a room on Whatsapp - looked good, decent price, even had
-                  &quot;Wi-Fi included.&quot;
-                </p>
-                <p className="font-normal">
-                  He paid fast to secure it <br />
-                  <span className="font-medium">When he arrived</span>
-                </p>
-                <ul className="list-disc pl-5 font-medium">
-                  <li>The room was already taken.</li>
-                  <li>The lanlord stopped replying.</li>
-                  <li>Jerry spent two week squatting with friends.</li>
-                  <li>And yeah... no-Wi-Fi.</li>
-                </ul>
-              </div>
-              <motion.p
-                className="font-semibold text-[25px] w-full text-center absolute left-0 bottom-5"
+            </div>
+          </div>
+
+          <div className="lg:mt-[86px] lg:h-[618px] max-w-[1039px] relative p-8">
+            <h4 className="text-[#3B3B3B] font-bold text-[125px] leading-[41px] absolute left-1/3 top-10 tracking-wide">
+              Jerry TecH
+            </h4>
+            <div className="w-full">
+              <motion.div
+                className="relative"
+                style={{ zIndex: 10 }}
                 variants={fadeInUp}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
               >
-                &quot;I automate everything... how did I not see this
-                coming?&quot;
-              </motion.p>
-            </motion.div>
+                <Image
+                  src="/images/jerry.svg"
+                  alt="Commentor Picture"
+                  width={100}
+                  height={100}
+                  className="h-[455px] w-[342px] absolute z-10 top-0 -right-40"
+                />
+                <motion.div
+                  className="bg-[#000000D4] absolute z-20 top-[21rem] -right-32 text-center rounded-[5px] w-[269px] h-[171px] flex flex-col items-center justify-center"
+                  variants={scaleIn}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                >
+                  <h4 className="font-semibold text-[23px]">Jerry Adebayo</h4>
+                  <p className="text-2xl font-light italic">
+                    400 Level, OAU <br />
+                    Computer Science <br />
+                    Full Stack Dev. Framer
+                  </p>
+                </motion.div>
+              </motion.div>
+              <motion.div
+                className="absolute z-5 bg-[#C0C0C0] text-black pr-[200px] pt-10 rounded-[20px] pb-18 pl-8 top-[97px] left-[200px] max-w-[886px]"
+                variants={fadeIn}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                <h4 className="font-semibold text-[38px]">
+                  Another &quot;Tech Bro&quot;
+                </h4>
+                <div className="text-[27px] font-medium flex flex-col">
+                  <p className="font-normal">
+                    <span className="font-semibold">
+                      Jerry is that guy - Agba Senior dev.
+                    </span>{" "}
+                    He thought he had it all sorted. But when it came to getting
+                    a room near school?{" "}
+                    <span className="font-semibold">Tech failed him.</span>
+                  </p>
+                  <p className="font-normal">
+                    He saw a room on Whatsapp - looked good, decent price, even
+                    had &quot;Wi-Fi included.&quot;
+                  </p>
+                  <p className="font-normal">
+                    He paid fast to secure it <br />
+                    <span className="font-medium">When he arrived...</span>
+                  </p>
+                  <ul className="list-disc pl-5 font-medium">
+                    <li>The room was already taken.</li>
+                    <li>The lanlord stopped replying.</li>
+                    <li>Jerry spent two week squatting with friends.</li>
+                    <li>And yeah... no-Wi-Fi.</li>
+                  </ul>
+                </div>
+                <motion.p
+                  className="font-semibold text-[25px] w-full text-center absolute left-0 bottom-5"
+                  variants={fadeInUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                >
+                  &quot;I automate everything... how did I not see this
+                  coming?&quot;
+                </motion.p>
+              </motion.div>
+            </div>
+          </div>
+
+          <div className="lg:mt-[160px] lg:h-[618px] max-w-[1039px] relative p-8">
+            <h4 className="text-[#3B3B3B] font-bold text-[125px] leading-[41px] absolute left-[12rem] top-10">
+              Mrs. Margaret
+            </h4>
+            <div className="w-full">
+              <motion.div
+                className="relative"
+                style={{ zIndex: 10 }}
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                <Image
+                  src="/images/mrs-magaret.svg"
+                  alt="Commentor Picture"
+                  width={100}
+                  height={100}
+                  className="h-[455px] w-[342px] absolute z-10 top-0 left-0"
+                />
+                <motion.div
+                  className="bg-[#000000D4] absolute z-20 top-[21rem] left-10 text-center rounded-[5px] w-[269px] h-[171px] flex flex-col items-center justify-center"
+                  variants={scaleIn}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                >
+                  <h4 className="font-semibold text-[23px]">
+                    Mrs. Margaret Oyeniyi
+                  </h4>
+                  <p className="text-2xl font-light italic">
+                    Lanlady <br />
+                    Oke-Igbo Area, near UNN <br />
+                    His grace villa
+                  </p>
+                </motion.div>
+              </motion.div>
+              <motion.div
+                className="absolute z-5 bg-[#2A9821] text-black pl-[190px] pt-10 rounded-[20px] pb-18 pr-8 top-[97px] left-[200px] max-w-[886px]"
+                variants={fadeIn}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                <h4 className="font-semibold text-[38px]">A Business Woman.</h4>
+                <div className="text-[27px] font-medium flex flex-col">
+                  <p>
+                    <span className="font-semibold">Mrs. Margaret </span>has
+                    been renting out her two-bedroom apartments near the
+                    university for years. She keeps her property clean, responds
+                    quickly, and genuinely cares about her tenants. <br />
+                    <span className="font-semibold">But.</span>
+                  </p>
+                  <ul className="list-disc pl-5">
+                    <li>Students promise to pay then disappear.</li>
+                    <li>
+                      Some damage to the property and then leave without notice.
+                    </li>
+                    <li>
+                      She spends money printing flyers and waiting for agents
+                      who never bring serious people.
+                    </li>
+                  </ul>
+                </div>
+                <motion.p
+                  className="font-semibold text-[25px] w-full text-center absolute left-0 bottom-5"
+                  variants={fadeInUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                >
+                  &quot;I just want good tenants who respect my space.&quot;
+                </motion.p>
+              </motion.div>
+            </div>
+          </div>
+
+          <div className="lg:mt-[86px] lg:h-[618px] max-w-[1039px] relative p-8">
+            <h4 className="text-[#3B3B3B] font-bold text-[125px] leading-[41px] absolute left-1/3 top-10 tracking-wide">
+              Peter E.
+            </h4>
+            <div className="w-full">
+              <motion.div
+                className="relative"
+                style={{ zIndex: 10 }}
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                <Image
+                  src="/images/peter.svg"
+                  alt="Commentor Picture"
+                  width={100}
+                  height={100}
+                  className="h-[455px] w-[342px] absolute z-10 top-0 -right-40"
+                />
+                <motion.div
+                  className="bg-[#000000D4] absolute z-20 top-[21rem] -right-32 text-center rounded-[5px] w-[269px] h-[171px] flex flex-col items-center justify-center"
+                  variants={scaleIn}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                >
+                  <h4 className="font-semibold text-[23px]">Jerry Adebayo</h4>
+                  <p className="text-2xl font-light italic">
+                    Peter Johnson <br />
+                    Local Housing Agent <br />
+                    Akure <br />
+                    Manages 8 properties
+                  </p>
+                </motion.div>
+              </motion.div>
+              <motion.div
+                className="absolute z-5 bg-[#D07626] text-black pr-[200px] pt-10 rounded-[20px] pb-18 pl-8 top-[97px] left-[200px] max-w-[886px]"
+                variants={fadeIn}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                <h4 className="font-semibold text-[38px]">A real hustler</h4>
+                <div className="text-[27px] font-medium flex flex-col">
+                  <p className="font-medium">
+                    <span className="font-semibold">
+                      Peter has been helping students find housing for years.
+                    </span>{" "}
+                    He knows the streets. The lanlords. The buildings. <br />
+                    <span className="font-semibold">
+                      But lately business has changed.
+                    </span>
+                    <br />
+                    Every semester he
+                  </p>
+                  his listings in 10+ WhatsApp groups.
+                  <ul className="list-disc pl-5 font-medium">
+                    <li>Students ghost him after asking 100 questions.</li>
+                    <li>Landlords complain about empty rooms.</li>
+                    <li>
+                      He spends hours daily juggling chats, calls, and moving
+                      round campus lodges.
+                    </li>
+                  </ul>
+                </div>
+                <motion.p
+                  className="font-semibold text-[25px] w-full text-center absolute left-0 bottom-5"
+                  variants={fadeInUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                >
+                  &quot;go hard ...or go home.&quot;
+                </motion.p>
+              </motion.div>
+            </div>
           </div>
         </div>
 
+        <div className="flex flex-col xl:hidden">
+          {/* Mobile version here */}
+        </div>
       </motion.section>
     </div>
   );
