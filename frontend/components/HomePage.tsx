@@ -753,8 +753,88 @@ export default function HomePage() {
         </span>
       </p>
 
-      <section className="bg-[url('/images/mobile-map.webp')] bg-center bg-cover bg-no-repeat h-[1710px] xl:hidden">
-        <div>
+      <section className="bg-[url('/images/mobile-map.webp')] bg-center bg-cover bg-no-repeat h-[1710px] xl:hidden relative text-black">
+        <div className=" absolute top-[14rem] p-4 w-full">
+          <div className="flex items-center gap-1">
+            <Image
+              src="/images/logo.svg"
+              alt="Logo Image"
+              width={100}
+              height={100}
+              className="w-[64px] h-[81px]"
+            />
+            <h2 className="font-extrabold text-[#00FF11] leading-8">
+              <span className="text-[45px]">Room</span>
+              <br />
+              <span className="text-[55px]">Radar</span>
+            </h2>
+          </div>
+
+          <div className="bg-[#3B3B3B] w-full h-px mt-[50px] mb-[34px]"></div>
+
+          <p className="mb-[90px] font-normal text-[23px]">
+            A <span className="text-[#00FF11] font-medium">smart,</span> student
+            focused housing platform designed to eliminate the{" "}
+            <span className="text-[#FFC403] font-medium">stress,</span> risk,
+            and confusion that comes with finding off-Campus accomodation.
+          </p>
+
+          <div className="space-y-[50px]">
+            <div className="space-y-10">
+              <div className="w-full h-[156px]">
+                <Image
+                  src="/images/for-student-illustration.svg"
+                  alt="For Students Illustration"
+                  width={100}
+                  height={100}
+                  className="w-full h-full"
+                />
+              </div>
+              <div className="space-y-1">
+                <h3 className="font-semibold text-[22px]">For Students:</h3>
+                <ul className="list-disc pl-6 text-xl font-normal">
+                  <li>
+                    <span className="font-medium text-[#00FF11]">Verified</span>{" "}
+                    home listings only - no scams.
+                  </li>
+                  <li>Smart filters (budget, amenities, distance to school)</li>
+                  <li>
+                    In-app chat with{" "}
+                    <span className="font-medium text-[#00FF11]">verified</span>{" "}
+                    landlords
+                  </li>
+                  <li>Booking with deposit protection</li>
+                  <li>Pay securely online</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="space-y-10 mb-[53px]">
+              <div className="w-full h-[156px]">
+                <Image
+                  src="/images/for-landlords-illustration.svg"
+                  alt="For Landlords Illustration"
+                  width={100}
+                  height={100}
+                  className="w-full h-full"
+                />
+              </div>
+              <div className="space-y-1">
+                <h3 className="font-semibold text-[22px]">For Landlords and Agents:</h3>
+                <ul className="list-disc pl-6 text-xl font-normal">
+                  <li>
+                    Larger <span className="text-[#FFC403] font-medium">Reach</span> to Students
+                  </li>
+                  <li>Upload listings with photos and pricing</li>
+                  <li>
+                   Chat directly and manage transactions
+                  </li>
+                  <li>Build reputation with <span className="text-[#FFC403] font-medium">reviews</span></li>
+                  <li>Fill vacant rooms <span className="text-[#FFC403] font-medium">faster</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
