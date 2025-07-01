@@ -753,8 +753,8 @@ export default function HomePage() {
         </span>
       </p>
 
-      <section className="bg-[url('/images/mobile-map.webp')] bg-center bg-cover bg-no-repeat h-[1710px] xl:hidden relative text-black">
-        <div className=" absolute top-[14rem] p-4 w-full">
+      <section className="bg-[url('/images/mobile-map.webp')] bg-center bg-cover bg-no-repeat xl:hidden relative text-black min-h-[2100px]">
+        <div className="absolute top-[18rem] p-4 w-full">
           <div className="flex items-center gap-1">
             <Image
               src="/images/logo.svg"
@@ -820,21 +820,96 @@ export default function HomePage() {
                 />
               </div>
               <div className="space-y-1">
-                <h3 className="font-semibold text-[22px]">For Landlords and Agents:</h3>
+                <h3 className="font-semibold text-[22px]">
+                  For Landlords and Agents:
+                </h3>
                 <ul className="list-disc pl-6 text-xl font-normal">
                   <li>
-                    Larger <span className="text-[#FFC403] font-medium">Reach</span> to Students
+                    Larger{" "}
+                    <span className="text-[#FFC403] font-medium">Reach</span> to
+                    Students
                   </li>
                   <li>Upload listings with photos and pricing</li>
+                  <li>Chat directly and manage transactions</li>
                   <li>
-                   Chat directly and manage transactions
+                    Build reputation with{" "}
+                    <span className="text-[#FFC403] font-medium">reviews</span>
                   </li>
-                  <li>Build reputation with <span className="text-[#FFC403] font-medium">reviews</span></li>
-                  <li>Fill vacant rooms <span className="text-[#FFC403] font-medium">faster</span></li>
+                  <li>
+                    Fill vacant rooms{" "}
+                    <span className="text-[#FFC403] font-medium">faster</span>
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
+
+          <div className="mb-[183px]">
+            <div className="flex items-center gap-2 border-b py-4 border-px border-[#3B3B3B] mb-[37px]">
+              <Image
+                src="/images/logo.svg"
+                alt="Logo Image"
+                width={100}
+                height={100}
+                className="w-[22px] h-[27.5px]"
+              />
+              <h2 className="font-semibold text-3xl text-[#00FF11]">
+                How it works
+              </h2>
+            </div>
+            <div>
+              <h3 className="text-xl font-normal mb-[46px] mt-[37px]">
+                3 simple steps
+              </h3>
+              <div className="space-y-[50px]">
+                <div className="w-full flex items-center justify-between">
+                  <Image
+                    src="/images/create-an-account.svg"
+                    alt="Create Account Illustration"
+                    width={100}
+                    height={100}
+                    className="w-full"
+                  />
+                  <p className="font-semibold text-[22px]">
+                    1. <br />
+                    Create An Account
+                  </p>
+                </div>
+
+                <div className="w-full flex items-center justify-between flex-row-reverse">
+                  <Image
+                    src="/images/search-for-lodges.svg"
+                    alt="Search for Illustration"
+                    width={100}
+                    height={100}
+                    className="w-full"
+                  />
+                  <p className="font-semibold text-[22px]">
+                    2. <br />
+                    Search for lodges at your desired location
+                  </p>
+                </div>
+
+                <div className="w-full flex items-center justify-between">
+                  <Image
+                    src="/images/chat.svg"
+                    alt="Chat Illustration"
+                    width={100}
+                    height={100}
+                    className="w-full"
+                  />
+                  <p className="font-semibold text-[22px]">
+                    3. <br />
+                    Chat, and Secure your Spot
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p className="font-normal text-[23px]">
+            So whether you&apos;re a student seaching for a <span className="font-medium text-[#00FF11]">safe</span>, affordable room close to school, an agent hustling back to back, or a Landlord trying to rent out a vacant apartment, <span className="font-medium text-[#0EC530]">RoomRadar</span> bridges the gap with <span className="font-medium text-[#FFC403]">trust</span>, <span className="text-[#979191] font-medium">transparency</span>, and <span className="font-medium text-[#00FF11]">ease</span>.
+          </p>
         </div>
       </section>
     </div>
