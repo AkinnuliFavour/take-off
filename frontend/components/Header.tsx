@@ -37,7 +37,7 @@ export default function Header() {
         viewport={{ once: true, amount: 0.3 }}
       >
         <motion.p
-          className="font-bold lg:text-[85px] text-[32px] flex-col lg:mt-[231px] lg:leading-[92px] leading-[35px] mt-[321px]"
+          className="font-bold lg:text-[85px] text-[32px] flex-col lg:mt-[400px] lg:leading-[92px] leading-[35px] mt-[321px]"
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"

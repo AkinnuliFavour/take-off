@@ -8,14 +8,13 @@ import {
   fadeIn,
 } from "@/components/animations/motion";
 import Image from "next/image";
-import Header from "./Header"
+import Header from "./Header";
 import Testimonials from "./Testimonials";
 import Footer from "./Footer";
 
 export default function HomePage() {
   return (
     <div className="w-full h-full">
-      
       <Header />
 
       <motion.section
@@ -58,9 +57,14 @@ export default function HomePage() {
       </motion.p>
 
       <Testimonials />
-      
 
-      <p className="font-medium my-[169px] px-8 flex flex-col w-full text-base leading-12 lg:font-bold lg:text-[31px] lg:leading-[58px] lg:items-start lg:pl-[92px] lg:mt-[321px] lg:gap-5 mb-[356px] lg:mb-[944px]">
+      <motion.p
+        className="font-medium my-[169px] px-8 flex flex-col w-full text-base leading-12 lg:font-bold lg:text-[31px] lg:leading-[58px] lg:items-start lg:pl-[92px] lg:mt-[321px] lg:gap-5 mb-[356px] lg:mb-[944px]"
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <span className="text-left">
           So maybe your case isn&apos;t that bad.
         </span>
@@ -71,11 +75,17 @@ export default function HomePage() {
           </span>{" "}
           even <span className="lg:text-[40px]">necessary</span>?
         </span>
-      </p>
+      </motion.p>
 
-      <section className="bg-[url('/images/mobile-map.webp')] bg-center bg-cover bg-no-repeat xl:hidden relative text-black w-full pt-[30rem]">
+      <motion.section
+        className="bg-[url('/images/mobile-map.webp')] bg-center bg-cover bg-no-repeat xl:hidden relative text-black w-full pt-[30rem]"
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <div className="p-4 w-full">
-          <div className="flex items-center gap-1">
+          <motion.div className="flex items-center gap-1" variants={fadeInUp}>
             <Image
               src="/images/logo.svg"
               alt="Logo Image"
@@ -88,19 +98,22 @@ export default function HomePage() {
               <br />
               <span className="text-[55px]">Radar</span>
             </h2>
-          </div>
+          </motion.div>
 
           <div className="bg-[#3B3B3B] w-full h-px mt-[50px] mb-[34px]"></div>
 
-          <p className="mb-[90px] font-normal text-[23px]">
+          <motion.p
+            className="mb-[90px] font-normal text-[23px]"
+            variants={fadeInUp}
+          >
             A <span className="text-[#00FF11] font-medium">smart,</span> student
             focused housing platform designed to eliminate the{" "}
             <span className="text-[#FFC403] font-medium">stress,</span> risk,
             and confusion that comes with finding off-Campus accomodation.
-          </p>
+          </motion.p>
 
-          <div className="space-y-[50px]">
-            <div className="space-y-10">
+          <motion.div className="space-y-[50px]" variants={containerVariants}>
+            <motion.div className="space-y-10" variants={fadeInUp}>
               <div className="w-full h-[156px]">
                 <Image
                   src="/images/for-student-illustration.svg"
@@ -127,9 +140,9 @@ export default function HomePage() {
                   <li>Pay securely online</li>
                 </ul>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="space-y-10 mb-[53px]">
+            <motion.div className="space-y-10 mb-[53px]" variants={fadeInUp}>
               <div className="w-full h-[156px]">
                 <Image
                   src="/images/for-landlords-illustration.svg"
@@ -161,11 +174,14 @@ export default function HomePage() {
                   </li>
                 </ul>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           <div className="mb-[196px]">
-            <div className="flex items-center gap-2 border-b py-4 border-px border-[#3B3B3B] mb-[37px]">
+            <motion.div
+              className="flex items-center gap-2 border-b py-4 border-px border-[#3B3B3B] mb-[37px]"
+              variants={fadeInUp}
+            >
               <Image
                 src="/images/logo.svg"
                 alt="Logo Image"
@@ -176,13 +192,19 @@ export default function HomePage() {
               <h2 className="font-semibold text-3xl text-[#00FF11]">
                 How it works
               </h2>
-            </div>
+            </motion.div>
             <div>
               <h3 className="text-xl font-normal mb-[46px] mt-[37px]">
                 3 simple steps
               </h3>
-              <div className="space-y-[50px]">
-                <div className="w-full flex items-center justify-between">
+              <motion.div
+                className="space-y-[50px]"
+                variants={containerVariants}
+              >
+                <motion.div
+                  className="w-full flex items-center justify-between"
+                  variants={fadeInUp}
+                >
                   <Image
                     src="/images/create-an-account.svg"
                     alt="Create Account Illustration"
@@ -199,9 +221,12 @@ export default function HomePage() {
                     />
                     Create An Account
                   </p>
-                </div>
+                </motion.div>
 
-                <div className="w-full flex items-center justify-between flex-row-reverse">
+                <motion.div
+                  className="w-full flex items-center justify-between flex-row-reverse"
+                  variants={fadeInUp}
+                >
                   <Image
                     src="/images/search-for-lodges.svg"
                     alt="Search for Illustration"
@@ -218,9 +243,12 @@ export default function HomePage() {
                     />
                     Search for lodges at your desired location
                   </p>
-                </div>
+                </motion.div>
 
-                <div className="w-full flex items-center justify-between">
+                <motion.div
+                  className="w-full flex items-center justify-between"
+                  variants={fadeInUp}
+                >
                   <Image
                     src="/images/chat.svg"
                     alt="Chat Illustration"
@@ -237,14 +265,14 @@ export default function HomePage() {
                     />
                     Chat, and Secure your Spot
                   </p>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </div>
           </div>
 
           <hr className="mb-[37px]" />
 
-          <p className="font-normal text-[23px]">
+          <motion.p className="font-normal text-[23px]" variants={fadeInUp}>
             So whether you&apos;re a student seaching for a{" "}
             <span className="font-medium text-[#00FF11]">safe</span>, affordable
             room close to school, an agent hustling back to back, or a Landlord
@@ -254,9 +282,9 @@ export default function HomePage() {
             <span className="font-medium text-[#FFC403]">trust</span>,{" "}
             <span className="text-[#979191] font-medium">transparency</span>,
             and <span className="font-medium text-[#00FF11]">ease</span>.
-          </p>
+          </motion.p>
         </div>
-      </section>
+      </motion.section>
 
       <Footer />
     </div>

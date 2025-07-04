@@ -1,40 +1,53 @@
 "use client";
-
+import { SiInstagram, SiWhatsapp, SiGmail } from "react-icons/si";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { fadeInUp, fadeIn, scaleIn } from "./animations/motion";
 
 export default function Footer() {
   return (
-    <footer className="w-full p-4 relative">
-      <p className="flex items-center border-b">
-        <Image
-          src="/images/logo.svg"
-          alt="Logo Icon"
-          width={100}
-          height={100}
-          className="w-[15.4px] h-[19.25px]"
-        />
-        Be the first to know when we launch.
-      </p>
+    <motion.footer
+      className="w-full relative"
+      variants={fadeIn}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+    >
+      <motion.div className="w-full px-4" variants={fadeInUp}>
+        <p className="flex items-center border-b mt-[166px] gap-1 pb-2 text-center justify-center text-base font-medium text-[#00FF11]">
+          <Image
+            src="/images/logo.svg"
+            alt="Logo Icon"
+            width={100}
+            height={100}
+            className="w-[15.4px] h-[19.25px]"
+          />
+          Be the first to know when we launch.
+        </p>
+      </motion.div>
 
-      <form className="max-w-md mx-auto mt-8 space-y-6">
+      <motion.form
+        className="max-w-md mx-auto space-y-8 mt-[52px] w-full px-4"
+        variants={fadeInUp}
+      >
         <div className="relative">
           <input
             type="text"
             id="name"
             name="name"
             required
-            className="peer block w-full border-b-2 border-[#00FF11] bg-transparent py-4 px-2 text-lg focus:outline-none focus:border-[#0EC530] transition-colors"
+            className="peer block w-full border border-[#00FF11] bg-white px-2 py-3 rounded-[7px] text-[12.5px] focus:outline-none focus:border-[#0EC530] transition-colors text-black"
             placeholder=" "
             autoComplete="off"
           />
           <label
             htmlFor="name"
-            className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-400 text-lg pointer-events-none transition-all duration-200
+            className="absolute left-2 top-1/2 -translate-y-1/2 text-[12.5px] pointer-events-none transition-all duration-200
                 peer-focus:-top-2 peer-focus:text-xs peer-focus:text-[#00FF11]
-                peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400
-                peer-not-placeholder-shown:-top-2 peer-not-placeholder-shown:text-xs peer-not-placeholder-shown:text-[#00FF11]"
+                peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-lg peer-placeholder-shown:text-[#0EC530] peer-placeholder-shown:text-[12.5px]
+                peer-not-placeholder-shown:-top-2 peer-not-placeholder-shown:text-xs peer-not-placeholder-shown:text-[#00FF11] peer-placeholder-shown:font-semibold"
           >
-            Name
+            Enter Name
           </label>
         </div>
         <div className="relative">
@@ -43,38 +56,66 @@ export default function Footer() {
             id="email"
             name="email"
             required
-            className="peer block w-full border-b-2 border-[#00FF11] bg-transparent py-4 px-2 text-lg focus:outline-none focus:border-[#0EC530] transition-colors"
+            className="peer block w-full border border-[#00FF11] bg-white px-2 py-3 text-[12.5px] focus:outline-none focus:border-[#0EC530] transition-colors rounded-[7px] text-black"
             placeholder=" "
             autoComplete="off"
           />
           <label
             htmlFor="email"
-            className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-400 text-lg pointer-events-none transition-all duration-200
+            className="absolute left-2 top-1/2 -translate-y-1/2 text-[12.5px] pointer-events-none transition-all duration-200
                 peer-focus:-top-2 peer-focus:text-xs peer-focus:text-[#00FF11]
-                peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400
-                peer-not-placeholder-shown:-top-2 peer-not-placeholder-shown:text-xs peer-not-placeholder-shown:text-[#00FF11]"
+                peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-lg peer-placeholder-shown:text-[#0EC530] peer-placeholder-shown:text-[12.5px]
+                peer-not-placeholder-shown:-top-2 peer-not-placeholder-shown:text-xs peer-not-placeholder-shown:text-[#00FF11] peer-placeholder-shown:font-semibold"
           >
             Email
           </label>
         </div>
-        <button>Join Waitlist</button>
-      </form>
+        <motion.div
+          className="w-full mx-auto flex items-center justify-center hover:cursor-pointer hover:opacity-90"
+          variants={scaleIn}
+        >
+          <button className="mt-[71px] bg-[#00FF11] font-bold text-base rounded-[10px] py-2 px-4">
+            Join Waitlist
+          </button>
+        </motion.div>
+      </motion.form>
 
-      <div>
-        <p>Get in touch</p>
+      <motion.div
+        className="flex flex-col gap-5 mt-[91px] bg-[url('/images/footer-bg-img.svg')] bg-cover bg-no-repeat bg-center -bottom-[20rem] right-0 w-full h-[214px]"
+        variants={fadeInUp}
+      >
+        <motion.div className="w-full px-4" variants={fadeInUp}>
+          <p className="flex items-center border-b gap-1 pb-2 text-center text-base font-medium text-[#00FF11]">
+            <Image
+              src="/images/logo.svg"
+              alt="Logo Icon"
+              width={100}
+              height={100}
+              className="w-[15.4px] h-[19.25px]"
+            />
+            Get in touch.
+          </p>
+        </motion.div>
 
-      </div>
-
-      <p className="font-extrabold text-[40px] leading-[66px] absolute bottom-0 right-0 flex items-center">
-        <Image
-          src="/images/logo.svg"
-          alt="Logo Image"
-          width={100}
-          height={100}
-          className="w-[29.15px] h-[36.44px]"
-        />
-        RoomRadar
-      </p>
-    </footer>
+        <motion.div className="flex gap-4 text-2xl px-4" variants={scaleIn}>
+          <SiInstagram />
+          <SiWhatsapp />
+          <SiGmail />
+        </motion.div>
+        <motion.p
+          className="font-extrabold text-[40px] leading-[66px] flex items-center absolute bottom-0 right-0"
+          variants={fadeIn}
+        >
+          <Image
+            src="/images/logo.svg"
+            alt="Logo Image"
+            width={100}
+            height={100}
+            className="w-[29.15px] h-[36.44px]"
+          />
+          RoomRadar
+        </motion.p>
+      </motion.div>
+    </motion.footer>
   );
 }
