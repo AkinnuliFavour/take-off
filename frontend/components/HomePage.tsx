@@ -2,6 +2,15 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
+});
+
 import {
   containerVariants,
   fadeInUp,
@@ -18,7 +27,7 @@ export default function HomePage() {
       <Header />
 
       <motion.section
-        className="w-full p-8 lg:pl-[92px]"
+        className="w-full p-8 lg:pl-[92px] max-w-[1440px] mx-auto"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -47,7 +56,7 @@ export default function HomePage() {
       </motion.section>
 
       <motion.p
-        className="mt-[206px] lg:mt-[108px] text-center font-bold text-base lg:text-[40px] mb-[452px] lg:mb-[426px]"
+        className="mt-[206px] lg:mt-[108px] text-center font-bold text-base lg:text-[40px] mb-[452px] lg:mb-[426px] max-w-[1440px] mx-auto"
         variants={fadeIn}
         initial="hidden"
         whileInView="visible"
@@ -59,7 +68,7 @@ export default function HomePage() {
       <Testimonials />
 
       <motion.p
-        className="font-medium my-[169px] px-8 flex flex-col w-full text-base leading-12 lg:font-bold lg:text-[31px] lg:leading-[58px] lg:items-start lg:pl-[92px] lg:mt-[321px] lg:gap-5 mb-[356px] lg:mb-[944px]"
+        className="font-medium my-[169px] px-8 flex flex-col w-full text-base leading-12 lg:font-bold lg:text-[31px] lg:leading-[58px] lg:items-start lg:pl-[92px] lg:mt-[321px] lg:gap-5 mb-[356px] lg:mb-[944px] max-w-[1440px] mx-auto"
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
@@ -114,7 +123,7 @@ export default function HomePage() {
 
           <motion.div className="space-y-[50px]" variants={containerVariants}>
             <motion.div className="space-y-10" variants={fadeInUp}>
-              <div className="w-full h-[156px]">
+              <div className="w-full max-w-[700px] mx-auto">
                 <Image
                   src="/images/for-student-illustration.svg"
                   alt="For Students Illustration"
@@ -143,7 +152,7 @@ export default function HomePage() {
             </motion.div>
 
             <motion.div className="space-y-10 mb-[53px]" variants={fadeInUp}>
-              <div className="w-full h-[156px]">
+              <div className="w-full max-w-[700px] mx-auto">
                 <Image
                   src="/images/for-landlords-illustration.svg"
                   alt="For Landlords Illustration"
@@ -202,7 +211,7 @@ export default function HomePage() {
                 variants={containerVariants}
               >
                 <motion.div
-                  className="w-full flex items-center justify-between"
+                  className="w-full flex items-center justify-between max-w-[500px] mx-auto"
                   variants={fadeInUp}
                 >
                   <Image
@@ -224,7 +233,7 @@ export default function HomePage() {
                 </motion.div>
 
                 <motion.div
-                  className="w-full flex items-center justify-between flex-row-reverse"
+                  className="w-full flex items-center justify-between flex-row-reverse max-w-[500px] mx-auto"
                   variants={fadeInUp}
                 >
                   <Image
@@ -246,7 +255,7 @@ export default function HomePage() {
                 </motion.div>
 
                 <motion.div
-                  className="w-full flex items-center justify-between"
+                  className="w-full flex items-center justify-between max-w-[500px] mx-auto"
                   variants={fadeInUp}
                 >
                   <Image
@@ -285,6 +294,151 @@ export default function HomePage() {
           </motion.p>
         </div>
       </motion.section>
+
+      <div className="w-full hidden xl:flex lg:flex-col relative">
+        <div className="absolute -top-[32rem] z-5 overflow-hidden -left-52 flex items-center">
+          <Image
+            src="/images/logo.svg"
+            alt="Room Radar Logo"
+            width={100}
+            height={100}
+            className="h-[526.63px] w-[421.3px]"
+          />
+        </div>
+        <section className="bg-[url('/images/map-desktop-bg.svg')] bg-center bg-cover bg-no-repeat h-[3483px] w-full z-10 ">
+          <h2 className="flex flex-col font-extrabold leading-[190px] text-[#00FF11] relative -top-[12rem] pl-26">
+            <span className="text-[210px]">Room</span>
+            <span className="text-[240px]">Radar</span>
+          </h2>
+          <div className="w-full px-[120px] -mt-[20rem]">
+            <div className="flex items-center gap-8">
+              <p className="max-w-[644px] font-normal text-3xl leading-[200%] text-black">
+                A <span className="text-[#00FF11] font-medium">smart,</span>{" "}
+                student focused housing platform designed to eliminate the{" "}
+                <span className="text-[#FFC403] font-medium">stress,</span>{" "}
+                risk, and confusion that comes with finding off-Campus
+                accomodation.
+              </p>
+              <div className="relative -top-26 w-full">
+                <Image
+                  src="/images/create-an-account-desktop.svg"
+                  alt="Create Account Illustration"
+                  width={100}
+                  height={100}
+                  className="w-[368px] h-[795px]"
+                />
+                <div className="flex items-center gap-2 absolute -z-2 w-full -bottom-30 -left-[20rem]">
+                  <Image
+                    src="/images/create-account-icon.svg"
+                    alt="Create Account Icon"
+                    width={39}
+                    height={52}
+                  />
+                  <p className="font-bold bg-[#D07626] text-white flex flex-col gap-4 rounded-[15px] py-8 px-4">
+                    <span className={`${inter.className} text-3xl`}>
+                      Step One:
+                    </span>
+                    <span className="text-[60px]">Create an account</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center flex-row-reverse text-black">
+              <div className="space-y-2 max-w-[570px]">
+                <h3 className="font-semibold text-[44px]">For Students:</h3>
+                <ul className="list-disc pl-6 text-3xl font-normal space-y-4 *:leading-[2.8rem]">
+                  <li>
+                    <span className="font-medium text-[#00FF11]">Verified</span>{" "}
+                    home listings only - no scams.
+                  </li>
+                  <li>Smart filters (budget, amenities, distance to school)</li>
+                  <li>
+                    In-app chat with{" "}
+                    <span className="font-medium text-[#00FF11]">verified</span>{" "}
+                    landlords
+                  </li>
+                  <li>Booking with deposit protection</li>
+                  <li>Pay securely online</li>
+                </ul>
+              </div>
+              <div className="relative w-full">
+                <Image
+                  src="/images/search-for-lodge-desktop.svg"
+                  alt="Search For Lodge Illustration"
+                  width={100}
+                  height={100}
+                  className="w-[368px] h-[795px]"
+                />
+                <div className="flex items-center gap-2 absolute -z-2 w-full">
+                  <Image
+                    src="/images/create-account-icon.svg"
+                    alt="Create Account Icon"
+                    width={39}
+                    height={52}
+                  />
+                  <p className="font-bold bg-[#FFC403] text-white flex flex-col gap-[7rem] leading-[3.6rem] rounded-[15px] py-8 px-4 absolute max-w-[565px]">
+                    <span className={`${inter.className} text-3xl text-right`}>
+                      Step two:
+                    </span>
+                    <span className="text-[60px]">
+                      Search for lodges at your desired Location.
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-8">
+              <p className="max-w-[644px] font-normal text-3xl leading-[200%] text-black">
+                A <span className="text-[#00FF11] font-medium">smart,</span>{" "}
+                student focused housing platform designed to eliminate the{" "}
+                <span className="text-[#FFC403] font-medium">stress,</span>{" "}
+                risk, and confusion that comes with finding off-Campus
+                accomodation.
+              </p>
+              <div className="relative w-full">
+                <Image
+                  src="/images/chat-desktop.svg"
+                  alt="Chat Illustration"
+                  width={100}
+                  height={100}
+                  className="w-[368px] h-[795px]"
+                />
+                <div className="flex items-center gap-2 absolute -z-2 w-full -bottom-[10rem] -left-[20rem]">
+                  <Image
+                    src="/images/create-account-icon.svg"
+                    alt="Create Account Icon"
+                    width={39}
+                    height={52}
+                  />
+                  <p className="font-bold bg-[#0EC530] text-white flex flex-col gap-4 rounded-[15px] py-8 px-4">
+                    <span className={`${inter.className} text-3xl`}>
+                      Step Three:
+                    </span>
+                    <span className="text-[60px]">
+                      Chat, <br />
+                      and secure your spot.
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <p className="absolute bottom-[12rem] text-black font-medium text-[45px]">
+              So whether you&apos;re a student seaching for a{" "}
+              <span className="font-medium text-[#00FF11]">safe</span>,
+              affordable room close to school, an agent hustling back to back,
+              or a Landlord trying to rent out a vacant apartment,{" "}
+              <span className="font-medium text-[#0EC530]">RoomRadar</span>{" "}
+              bridges the gap with{" "}
+              <span className="font-medium text-[#FFC403]">trust</span>,{" "}
+              <span className="text-[#979191] font-medium">transparency</span>,
+              and <span className="font-medium text-[#00FF11]">ease</span>.
+            </p>
+          </div>
+        </section>
+      </div>
 
       <Footer />
     </div>

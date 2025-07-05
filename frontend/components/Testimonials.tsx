@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Testimonials() {
   return (
-    <section className="p-8 lg:pl-[92px] max-w-[1265px]">
+    <section className="p-8 lg:pl-[92px] max-w-[1440px] mx-auto">
       <div className="p-2 flex flex-col gap-4">
         <p className="text-base font-medium lg:text-3xl">
           <span className="text-[#00FF11] font-semibold">Off-Campus</span> life

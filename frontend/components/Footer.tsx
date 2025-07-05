@@ -14,7 +14,7 @@ export default function Footer() {
       viewport={{ once: true, amount: 0.3 }}
     >
       <motion.div className="w-full px-4" variants={fadeInUp}>
-        <p className="flex items-center border-b mt-[166px] gap-1 pb-2 text-center justify-center text-base font-medium text-[#00FF11]">
+        <p className="flex items-center border-b mt-[166px] gap-1 pb-2 text-center justify-center text-base font-medium text-[#00FF11] lg:border-0">
           <Image
             src="/images/logo.svg"
             alt="Logo Icon"
@@ -85,7 +85,7 @@ export default function Footer() {
         variants={fadeInUp}
       >
         <motion.div className="w-full px-4" variants={fadeInUp}>
-          <p className="flex items-center border-b gap-1 pb-2 text-center text-base font-medium text-[#00FF11]">
+          <p className="flex items-center border-b gap-1 pb-2 text-center text-base font-medium text-[#00FF11] pt-4">
             <Image
               src="/images/logo.svg"
               alt="Logo Icon"
