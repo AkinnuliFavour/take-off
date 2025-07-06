@@ -129,7 +129,7 @@ export default function HomePage() {
               <div className="space-y-1">
                 <h3 className="font-semibold text-[22px]">For Students:</h3>
                 <motion.ul
-                  className="list-disc pl-6 text-3xl font-normal space-y-4 *:leading-[2.8rem]"
+                  className="list-disc pl-6 text-[19px] font-normal space-y-4"
                   variants={containerVariants}
                   initial="hidden"
                   whileInView="visible"
@@ -170,7 +170,7 @@ export default function HomePage() {
                   For Landlords and Agents:
                 </h3>
                 <motion.ul
-                  className="list-disc pl-6 text-3xl font-normal space-y-4 *:leading-[2.8rem]"
+                  className="list-disc pl-6 text-[19px] font-normal space-y-4"
                   variants={containerVariants}
                   initial="hidden"
                   whileInView="visible"
