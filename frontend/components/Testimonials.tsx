@@ -2,11 +2,23 @@
 
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import {
+  fadeInUp,
+  containerVariants,
+  childVariants,
+} from "./animations/motion";
 
 export default function Testimonials() {
   return (
     <section className="p-8 lg:pl-[92px] max-w-[1440px] mx-auto">
-      <div className="p-2 flex flex-col gap-4">
+      <motion.div
+        className="p-2 flex flex-col gap-4"
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <p className="text-base font-medium lg:text-3xl">
           <span className="text-[#00FF11] font-semibold">Off-Campus</span> life
           can feel like a maze of{" "}
@@ -22,12 +34,21 @@ export default function Testimonials() {
 
         <p className="font-medium lg:text-3xl">
           Maybe you too have your own story to tell, But meet some real people
-          like you who&apos;ve faced similar issues.{" "}
+          like you who&apos;ve faced similar issues.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="w-full flex-col hidden xl:flex">
-        <div className="lg:mt-[86px] lg:h-[618px] max-w-[1039px] relative p-8">
+      <motion.div
+        className="w-full flex-col hidden xl:flex"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <motion.div
+          className="lg:mt-[86px] lg:h-[618px] max-w-[1039px] relative p-8"
+          variants={childVariants}
+        >
           <h4 className="text-[#3B3B3B] font-bold text-[125px] leading-[41px] absolute left-1/3 top-10 tracking-wide">
             Chiamaka
           </h4>
@@ -40,16 +61,22 @@ export default function Testimonials() {
                 height={100}
                 className="h-[455px] w-[342px] absolute z-10 top-0 left-0"
               />
-              <div className="bg-[#000000D4] absolute z-20 top-[21rem] left-10 text-center rounded-[5px] w-[269px] h-[171px] flex flex-col items-center justify-center">
+              <motion.div
+                className="bg-[#000000D4] absolute z-20 top-[21rem] left-10 text-center rounded-[5px] w-[269px] h-[171px] flex flex-col items-center justify-center"
+                variants={fadeInUp}
+              >
                 <h4 className="font-semibold text-[23px]">Chiamaka Oyenchi</h4>
                 <p className="text-2xl font-light italic">
                   300 Level, FUTA <br />
                   Mass Communication <br />
                   Fashion Retailer
                 </p>
-              </div>
+              </motion.div>
             </div>
-            <div className="absolute z-5 bg-[#FFC403] text-black pl-[190px] pt-10 rounded-[20px] pb-18 pr-8 top-[97px] left-[200px] max-w-[886px]">
+            <motion.div
+              className="absolute z-5 bg-[#FFC403] text-black pl-[190px] pt-10 rounded-[20px] pb-18 pr-8 top-[97px] left-[200px] max-w-[886px]"
+              variants={fadeInUp}
+            >
               <h4 className="font-semibold text-[38px]">
                 Chiamaka&apos;s Nightmare
               </h4>
@@ -78,9 +105,9 @@ export default function Testimonials() {
                 &quot;I felt lost and cheated. I just wanted a safe, honest
                 place.&quot;
               </p>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
 
         <div className="lg:mt-[86px] lg:h-[618px] max-w-[1039px] relative p-8">
           <h4 className="text-[#3B3B3B] font-bold text-[125px] leading-[41px] absolute left-1/3 top-10 tracking-wide">
@@ -245,7 +272,7 @@ export default function Testimonials() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       <div
         className="flex flex-col xl:hidden mt-[100px] gap-[8rem] max-w-xl mx-auto"

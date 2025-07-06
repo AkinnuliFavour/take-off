@@ -15,6 +15,7 @@ import {
   containerVariants,
   fadeInUp,
   fadeIn,
+  scaleIn,
 } from "@/components/animations/motion";
 import Image from "next/image";
 import Header from "./Header";
@@ -345,7 +346,10 @@ export default function HomePage() {
             </div>
 
             <div className="flex items-center flex-row-reverse text-black">
-              <div className="space-y-2 max-w-[570px]">
+              <motion.div
+                className="space-y-2 max-w-[570px]"
+                variants={fadeInUp}
+              >
                 <h3 className="font-semibold text-[44px]">For Students:</h3>
                 <ul className="list-disc pl-6 text-3xl font-normal space-y-4 *:leading-[2.8rem]">
                   <li>
@@ -361,8 +365,8 @@ export default function HomePage() {
                   <li>Booking with deposit protection</li>
                   <li>Pay securely online</li>
                 </ul>
-              </div>
-              <div className="relative w-full">
+              </motion.div>
+              <motion.div className="relative w-full" variants={scaleIn}>
                 <Image
                   src="/images/search-for-lodge-desktop.svg"
                   alt="Search For Lodge Illustration"
@@ -370,7 +374,10 @@ export default function HomePage() {
                   height={100}
                   className="w-[368px] h-[795px]"
                 />
-                <div className="flex items-center gap-2 absolute -z-2 w-full">
+                <motion.div
+                  className="flex items-center gap-2 absolute -z-2 w-full"
+                  variants={fadeInUp}
+                >
                   <Image
                     src="/images/create-account-icon.svg"
                     alt="Create Account Icon"
@@ -385,8 +392,8 @@ export default function HomePage() {
                       Search for lodges at your desired Location.
                     </span>
                   </p>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </div>
 
             <div className="flex items-center gap-8">
@@ -405,7 +412,10 @@ export default function HomePage() {
                   height={100}
                   className="w-[368px] h-[795px]"
                 />
-                <div className="flex items-center gap-2 absolute -z-2 w-full -bottom-[10rem] -left-[20rem]">
+                <motion.div
+                  className="flex items-center gap-2 absolute -z-2 w-full -bottom-[10rem] -left-[20rem]"
+                  variants={fadeInUp}
+                >
                   <Image
                     src="/images/create-account-icon.svg"
                     alt="Create Account Icon"
@@ -421,11 +431,17 @@ export default function HomePage() {
                       and secure your spot.
                     </span>
                   </p>
-                </div>
+                </motion.div>
               </div>
             </div>
 
-            <p className="absolute bottom-[12rem] text-black font-medium text-[45px]">
+            <motion.p
+              className="absolute bottom-[12rem] text-black font-medium text-[45px]"
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
               So whether you&apos;re a student seaching for a{" "}
               <span className="font-medium text-[#00FF11]">safe</span>,
               affordable room close to school, an agent hustling back to back,
@@ -435,7 +451,7 @@ export default function HomePage() {
               <span className="font-medium text-[#FFC403]">trust</span>,{" "}
               <span className="text-[#979191] font-medium">transparency</span>,
               and <span className="font-medium text-[#00FF11]">ease</span>.
-            </p>
+            </motion.p>
           </div>
         </section>
       </div>
