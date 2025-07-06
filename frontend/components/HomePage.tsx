@@ -128,20 +128,30 @@ export default function HomePage() {
               </div>
               <div className="space-y-1">
                 <h3 className="font-semibold text-[22px]">For Students:</h3>
-                <ul className="list-disc pl-6 text-xl font-normal">
-                  <li>
+                <motion.ul
+                  className="list-disc pl-6 text-3xl font-normal space-y-4 *:leading-[2.8rem]"
+                  variants={containerVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                >
+                  <motion.li variants={fadeInUp}>
                     <span className="font-medium text-[#00FF11]">Verified</span>{" "}
                     home listings only - no scams.
-                  </li>
-                  <li>Smart filters (budget, amenities, distance to school)</li>
-                  <li>
+                  </motion.li>
+                  <motion.li variants={fadeInUp}>
+                    Smart filters (budget, amenities, distance to school)
+                  </motion.li>
+                  <motion.li variants={fadeInUp}>
                     In-app chat with{" "}
                     <span className="font-medium text-[#00FF11]">verified</span>{" "}
                     landlords
-                  </li>
-                  <li>Booking with deposit protection</li>
-                  <li>Pay securely online</li>
-                </ul>
+                  </motion.li>
+                  <motion.li variants={fadeInUp}>
+                    Booking with deposit protection
+                  </motion.li>
+                  <motion.li variants={fadeInUp}>Pay securely online</motion.li>
+                </motion.ul>
               </div>
             </motion.div>
 
@@ -159,23 +169,32 @@ export default function HomePage() {
                 <h3 className="font-semibold text-[22px]">
                   For Landlords and Agents:
                 </h3>
-                <ul className="list-disc pl-6 text-xl font-normal">
-                  <li>
-                    Larger{" "}
-                    <span className="text-[#FFC403] font-medium">Reach</span> to
-                    Students
-                  </li>
-                  <li>Upload listings with photos and pricing</li>
-                  <li>Chat directly and manage transactions</li>
-                  <li>
+                <motion.ul
+                  className="list-disc pl-6 text-3xl font-normal space-y-4 *:leading-[2.8rem]"
+                  variants={containerVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                >
+                  <motion.li variants={fadeInUp}>
+                    Larger <span className="text-[#FFC403]">Reach</span> to
+                    students
+                  </motion.li>
+                  <motion.li variants={fadeInUp}>
+                    Upload listings with photos and pricing
+                  </motion.li>
+                  <motion.li variants={fadeInUp}>
+                    Chat directly and manage transactions
+                  </motion.li>
+                  <motion.li variants={fadeInUp}>
                     Build reputation with{" "}
-                    <span className="text-[#FFC403] font-medium">reviews</span>
-                  </li>
-                  <li>
+                    <span className="text-[#FFC403]">reviews</span>
+                  </motion.li>
+                  <motion.li variants={fadeInUp}>
                     Fill vacant rooms{" "}
-                    <span className="text-[#FFC403] font-medium">faster</span>
-                  </li>
-                </ul>
+                    <span className="text-[#FFC403]">faster</span>
+                  </motion.li>
+                </motion.ul>
               </div>
             </motion.div>
           </motion.div>
@@ -290,7 +309,13 @@ export default function HomePage() {
       </motion.section>
 
       <div className="w-full hidden xl:flex lg:flex-col relative">
-        <div className="absolute -top-[32rem] z-5 overflow-hidden -left-52 flex items-center">
+        <motion.div
+          className="absolute -top-[32rem] z-5 overflow-hidden -left-52 flex items-center"
+          variants={fadeIn}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
           <Image
             src="/images/logo.svg"
             alt="Room Radar Logo"
@@ -298,16 +323,15 @@ export default function HomePage() {
             height={100}
             className="h-[526.63px] w-[421.3px]"
           />
-        </div>
-        <section className="bg-[url('/images/map-desktop-bg.svg')] bg-center bg-cover bg-no-repeat h-[3483px] w-full z-10 ">
+        </motion.div>
 
+        <section className="bg-[url('/images/map-desktop-bg.svg')] bg-center bg-cover bg-no-repeat h-[3483px] w-full z-10 ">
           <h2 className="flex flex-col font-extrabold leading-[190px] text-[#00FF11] relative -top-[12rem] pl-26">
             <span className="text-[210px]">Room</span>
             <span className="text-[240px]">Radar</span>
           </h2>
 
           <div className="w-full px-[120px] -mt-[20rem]">
-
             <div className="flex items-center gap-8">
               <p className="max-w-[644px] font-normal text-3xl leading-[200%] text-black">
                 A <span className="text-[#00FF11] font-medium">smart,</span>{" "}
@@ -316,7 +340,13 @@ export default function HomePage() {
                 risk, and confusion that comes with finding off-Campus
                 accomodation.
               </p>
-              <div className="w-full">
+              <motion.div
+                className="w-full"
+                variants={scaleIn}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+              >
                 <Image
                   src="/images/create-account-desktop.svg"
                   alt="Create Account Illustration"
@@ -324,7 +354,7 @@ export default function HomePage() {
                   height={100}
                   className="w-full"
                 />
-              </div>
+              </motion.div>
             </div>
 
             <div className="flex flex-row-reverse justify-between text-black">
@@ -333,22 +363,38 @@ export default function HomePage() {
                 variants={fadeInUp}
               >
                 <h3 className="font-semibold text-[44px]">For Students:</h3>
-                <ul className="list-disc pl-6 text-3xl font-normal space-y-4 *:leading-[2.8rem]">
-                  <li>
+                <motion.ul
+                  className="list-disc pl-6 text-3xl font-normal space-y-4 *:leading-[2.8rem]"
+                  variants={containerVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                >
+                  <motion.li variants={fadeInUp}>
                     <span className="font-medium text-[#00FF11]">Verified</span>{" "}
                     home listings only - no scams.
-                  </li>
-                  <li>Smart filters (budget, amenities, distance to school)</li>
-                  <li>
+                  </motion.li>
+                  <motion.li variants={fadeInUp}>
+                    Smart filters (budget, amenities, distance to school)
+                  </motion.li>
+                  <motion.li variants={fadeInUp}>
                     In-app chat with{" "}
                     <span className="font-medium text-[#00FF11]">verified</span>{" "}
                     landlords
-                  </li>
-                  <li>Booking with deposit protection</li>
-                  <li>Pay securely online</li>
-                </ul>
+                  </motion.li>
+                  <motion.li variants={fadeInUp}>
+                    Booking with deposit protection
+                  </motion.li>
+                  <motion.li variants={fadeInUp}>Pay securely online</motion.li>
+                </motion.ul>
               </motion.div>
-              <motion.div className="w-full max-w-xl" variants={scaleIn}>
+              <motion.div
+                className="w-full max-w-xl"
+                variants={scaleIn}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+              >
                 <Image
                   src="/images/search-for-lodge-desktop.svg"
                   alt="Search For Lodge Illustration"
@@ -360,31 +406,44 @@ export default function HomePage() {
             </div>
 
             <div className="flex items-center gap-8">
-              <motion.div
-                className="space-y-2 text-black"
-                variants={fadeInUp}
-              >
+              <motion.div className="space-y-2 text-black" variants={fadeInUp}>
                 <h3 className="font-semibold text-[44px]">
                   For Landlords and Agents:
                 </h3>
-                <ul className="list-disc pl-6 text-3xl font-normal space-y-4 *:leading-[2.8rem]">
-                  <li>
+                <motion.ul
+                  className="list-disc pl-6 text-3xl font-normal space-y-4 *:leading-[2.8rem]"
+                  variants={containerVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                >
+                  <motion.li variants={fadeInUp}>
                     Larger <span className="text-[#FFC403]">Reach</span> to
                     students
-                  </li>
-                  <li>Upload listings with photos and pricing</li>
-                  <li>Chat directly and manage transactions</li>
-                  <li>
+                  </motion.li>
+                  <motion.li variants={fadeInUp}>
+                    Upload listings with photos and pricing
+                  </motion.li>
+                  <motion.li variants={fadeInUp}>
+                    Chat directly and manage transactions
+                  </motion.li>
+                  <motion.li variants={fadeInUp}>
                     Build reputation with{" "}
                     <span className="text-[#FFC403]">reviews</span>
-                  </li>
-                  <li>
+                  </motion.li>
+                  <motion.li variants={fadeInUp}>
                     Fill vacant rooms{" "}
                     <span className="text-[#FFC403]">faster</span>
-                  </li>
-                </ul>
+                  </motion.li>
+                </motion.ul>
               </motion.div>
-              <div className="w-full max-w-xl">
+              <motion.div
+                className="w-full max-w-xl"
+                variants={scaleIn}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+              >
                 <Image
                   src="/images/chat-desktop.svg"
                   alt="Chat Illustration"
@@ -392,7 +451,7 @@ export default function HomePage() {
                   height={100}
                   className="w-full"
                 />
-              </div>
+              </motion.div>
             </div>
 
             <motion.p
