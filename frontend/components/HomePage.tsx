@@ -2,14 +2,6 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Inter } from "next/font/google";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  style: ["normal", "italic"],
-});
 
 import {
   containerVariants,
@@ -17,6 +9,7 @@ import {
   fadeIn,
   scaleIn,
 } from "@/components/animations/motion";
+
 import Image from "next/image";
 import Header from "./Header";
 import Testimonials from "./Testimonials";
@@ -307,11 +300,14 @@ export default function HomePage() {
           />
         </div>
         <section className="bg-[url('/images/map-desktop-bg.svg')] bg-center bg-cover bg-no-repeat h-[3483px] w-full z-10 ">
+
           <h2 className="flex flex-col font-extrabold leading-[190px] text-[#00FF11] relative -top-[12rem] pl-26">
             <span className="text-[210px]">Room</span>
             <span className="text-[240px]">Radar</span>
           </h2>
+
           <div className="w-full px-[120px] -mt-[20rem]">
+
             <div className="flex items-center gap-8">
               <p className="max-w-[644px] font-normal text-3xl leading-[200%] text-black">
                 A <span className="text-[#00FF11] font-medium">smart,</span>{" "}
@@ -320,34 +316,20 @@ export default function HomePage() {
                 risk, and confusion that comes with finding off-Campus
                 accomodation.
               </p>
-              <div className="relative -top-26 w-full">
+              <div className="w-full">
                 <Image
-                  src="/images/create-an-account-desktop.svg"
+                  src="/images/create-account-desktop.svg"
                   alt="Create Account Illustration"
                   width={100}
                   height={100}
-                  className="w-[368px] h-[795px]"
+                  className="w-full"
                 />
-                <div className="flex items-center gap-2 absolute -z-2 w-full -bottom-30 -left-[20rem]">
-                  <Image
-                    src="/images/create-account-icon.svg"
-                    alt="Create Account Icon"
-                    width={39}
-                    height={52}
-                  />
-                  <p className="font-bold bg-[#D07626] text-white flex flex-col gap-4 rounded-[15px] py-8 px-4">
-                    <span className={`${inter.className} text-3xl`}>
-                      Step One:
-                    </span>
-                    <span className="text-[60px]">Create an account</span>
-                  </p>
-                </div>
               </div>
             </div>
 
-            <div className="flex items-center flex-row-reverse text-black">
+            <div className="flex flex-row-reverse justify-between text-black">
               <motion.div
-                className="space-y-2 max-w-[570px]"
+                className="space-y-2 max-w-[570px] mt-24"
                 variants={fadeInUp}
               >
                 <h3 className="font-semibold text-[44px]">For Students:</h3>
@@ -366,77 +348,55 @@ export default function HomePage() {
                   <li>Pay securely online</li>
                 </ul>
               </motion.div>
-              <motion.div className="relative w-full" variants={scaleIn}>
+              <motion.div className="w-full max-w-xl" variants={scaleIn}>
                 <Image
                   src="/images/search-for-lodge-desktop.svg"
                   alt="Search For Lodge Illustration"
                   width={100}
                   height={100}
-                  className="w-[368px] h-[795px]"
+                  className="w-full"
                 />
-                <motion.div
-                  className="flex items-center gap-2 absolute -z-2 w-full"
-                  variants={fadeInUp}
-                >
-                  <Image
-                    src="/images/create-account-icon.svg"
-                    alt="Create Account Icon"
-                    width={39}
-                    height={52}
-                  />
-                  <p className="font-bold bg-[#FFC403] text-white flex flex-col gap-[7rem] leading-[3.6rem] rounded-[15px] py-8 px-4 absolute max-w-[565px]">
-                    <span className={`${inter.className} text-3xl text-right`}>
-                      Step two:
-                    </span>
-                    <span className="text-[60px]">
-                      Search for lodges at your desired Location.
-                    </span>
-                  </p>
-                </motion.div>
               </motion.div>
             </div>
 
             <div className="flex items-center gap-8">
-              <p className="max-w-[644px] font-normal text-3xl leading-[200%] text-black">
-                A <span className="text-[#00FF11] font-medium">smart,</span>{" "}
-                student focused housing platform designed to eliminate the{" "}
-                <span className="text-[#FFC403] font-medium">stress,</span>{" "}
-                risk, and confusion that comes with finding off-Campus
-                accomodation.
-              </p>
-              <div className="relative w-full">
+              <motion.div
+                className="space-y-2 text-black"
+                variants={fadeInUp}
+              >
+                <h3 className="font-semibold text-[44px]">
+                  For Landlords and Agents:
+                </h3>
+                <ul className="list-disc pl-6 text-3xl font-normal space-y-4 *:leading-[2.8rem]">
+                  <li>
+                    Larger <span className="text-[#FFC403]">Reach</span> to
+                    students
+                  </li>
+                  <li>Upload listings with photos and pricing</li>
+                  <li>Chat directly and manage transactions</li>
+                  <li>
+                    Build reputation with{" "}
+                    <span className="text-[#FFC403]">reviews</span>
+                  </li>
+                  <li>
+                    Fill vacant rooms{" "}
+                    <span className="text-[#FFC403]">faster</span>
+                  </li>
+                </ul>
+              </motion.div>
+              <div className="w-full max-w-xl">
                 <Image
                   src="/images/chat-desktop.svg"
                   alt="Chat Illustration"
                   width={100}
                   height={100}
-                  className="w-[368px] h-[795px]"
+                  className="w-full"
                 />
-                <motion.div
-                  className="flex items-center gap-2 absolute -z-2 w-full -bottom-[10rem] -left-[20rem]"
-                  variants={fadeInUp}
-                >
-                  <Image
-                    src="/images/create-account-icon.svg"
-                    alt="Create Account Icon"
-                    width={39}
-                    height={52}
-                  />
-                  <p className="font-bold bg-[#0EC530] text-white flex flex-col gap-4 rounded-[15px] py-8 px-4">
-                    <span className={`${inter.className} text-3xl`}>
-                      Step Three:
-                    </span>
-                    <span className="text-[60px]">
-                      Chat, <br />
-                      and secure your spot.
-                    </span>
-                  </p>
-                </motion.div>
               </div>
             </div>
 
             <motion.p
-              className="absolute bottom-[12rem] text-black font-medium text-[45px]"
+              className=" mt-[197px] text-black font-medium text-[45px]"
               variants={fadeInUp}
               initial="hidden"
               whileInView="visible"
