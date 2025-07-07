@@ -13,7 +13,7 @@ export default function Footer() {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
     >
-      <motion.div className="w-full px-4 lg:pl-[145px]" variants={fadeInUp}>
+      <motion.div className="w-full px-4 lg:pl-[145px] max-w-[1440px] mx-auto" variants={fadeInUp}>
         <p className="flex items-center border-b mt-[166px] gap-1 pb-2 justify-center text-base font-medium text-[#00FF11] lg:text-2xl lg:border-0 xl:font-semibold xl:text-[50px] xl:justify-start">
           <Image
             src="/images/logo.svg"
@@ -27,7 +27,7 @@ export default function Footer() {
       </motion.div>
 
       <motion.form
-        className="max-w-6xl space-y-8 lg:space-y-16 mt-[52px] w-full px-4 xl:pl-[145px]"
+        className="max-w-[1440px] mx-auto space-y-8 lg:space-y-16 mt-[52px] w-full px-4 xl:px-[145px]"
         variants={fadeInUp}
       >
         <div className="relative">
@@ -74,7 +74,7 @@ export default function Footer() {
           className="w-full mx-auto flex items-center justify-center hover:cursor-pointer hover:opacity-90"
           variants={scaleIn}
         >
-          <button className="mt-[71px] bg-[#00FF11] font-bold text-base rounded-[10px] py-2 px-4 xl:text-[39px] lg:text-2xl">
+          <button className="bg-[#00FF11] font-bold text-base rounded-[10px] py-2 px-4 xl:text-[39px] lg:text-2xl cursor-pointer hover:opacity-90">
             Join Waitlist
           </button>
         </motion.div>

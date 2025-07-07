@@ -325,13 +325,13 @@ export default function HomePage() {
           />
         </motion.div>
 
-        <section className="bg-[url('/images/map-desktop-bg.svg')] bg-center bg-cover bg-no-repeat h-[3483px] w-full z-10 ">
+        <section className="bg-[url('/images/map-desktop-bg.svg')] bg-center bg-cover bg-no-repeat w-full z-10 ">
           <h2 className="flex flex-col font-extrabold leading-[190px] text-[#00FF11] relative -top-[12rem] pl-26">
             <span className="text-[210px]">Room</span>
             <span className="text-[240px]">Radar</span>
           </h2>
 
-          <div className="w-full px-[120px] -mt-[20rem]">
+          <div className="w-full px-[120px] -mt-[20rem] max-w-[1440px] mx-auto">
             <div className="flex items-center gap-8">
               <p className="max-w-[644px] font-normal text-3xl leading-[200%] text-black">
                 A <span className="text-[#00FF11] font-medium">smart,</span>{" "}
@@ -341,7 +341,7 @@ export default function HomePage() {
                 accomodation.
               </p>
               <motion.div
-                className="w-full"
+                className="w-full max-w-xl"
                 variants={scaleIn}
                 initial="hidden"
                 whileInView="visible"
@@ -455,7 +455,7 @@ export default function HomePage() {
             </div>
 
             <motion.p
-              className=" mt-[197px] text-black font-medium text-[45px]"
+              className=" mt-[197px] text-black font-medium text-[45px] mb-[181px]"
               variants={fadeInUp}
               initial="hidden"
               whileInView="visible"
