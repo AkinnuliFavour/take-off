@@ -80,14 +80,15 @@ export default function HomePage() {
         </span>
       </motion.p>
 
-      <motion.section
-        className="bg-[url('/images/mobile-map.webp')] bg-center bg-cover bg-no-repeat xl:hidden relative text-black w-full pt-[30rem]"
-        variants={fadeIn}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        <div className="p-4 w-full">
+      <section className="xl:hidden relative text-black w-full min-h-screen">
+        <Image
+          src="/images/mobile-map.webp"
+          alt="Background"
+          fill
+          className="object-cover -z-10"
+          quality={100}
+        />
+        <div className="p-4 w-full pt-[32rem]">
           <motion.div className="flex items-center gap-1" variants={fadeInUp}>
             <Image
               src="/images/logo.svg"
@@ -117,7 +118,13 @@ export default function HomePage() {
 
           <motion.div className="space-y-[50px]" variants={containerVariants}>
             <motion.div className="space-y-10" variants={fadeInUp}>
-              <div className="w-full max-w-[700px] mx-auto">
+              <motion.div
+                variants={scaleIn}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                className="w-full max-w-[700px] mx-auto"
+              >
                 <Image
                   src="/images/for-student-illustration.svg"
                   alt="For Students Illustration"
@@ -125,7 +132,7 @@ export default function HomePage() {
                   height={100}
                   className="w-full h-full"
                 />
-              </div>
+              </motion.div>
               <div className="space-y-1">
                 <h3 className="font-semibold text-[22px]">For Students:</h3>
                 <motion.ul
@@ -156,7 +163,13 @@ export default function HomePage() {
             </motion.div>
 
             <motion.div className="space-y-10 mb-[53px]" variants={fadeInUp}>
-              <div className="w-full max-w-[700px] mx-auto">
+              <motion.div
+                variants={scaleIn}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                className="w-full max-w-[700px] mx-auto"
+              >
                 <Image
                   src="/images/for-landlords-illustration.svg"
                   alt="For Landlords Illustration"
@@ -164,7 +177,7 @@ export default function HomePage() {
                   height={100}
                   className="w-full h-full"
                 />
-              </div>
+              </motion.div>
               <div className="space-y-1">
                 <h3 className="font-semibold text-[22px]">
                   For Landlords and Agents:
@@ -225,7 +238,10 @@ export default function HomePage() {
               >
                 <motion.div
                   className="w-full flex items-center justify-between max-w-[500px] mx-auto"
-                  variants={fadeInUp}
+                  variants={scaleIn}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
                 >
                   <Image
                     src="/images/create-an-account.svg"
@@ -247,7 +263,10 @@ export default function HomePage() {
 
                 <motion.div
                   className="w-full flex items-center justify-between flex-row-reverse max-w-[500px] mx-auto"
-                  variants={fadeInUp}
+                  variants={scaleIn}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
                 >
                   <Image
                     src="/images/search-for-lodges.svg"
@@ -269,7 +288,10 @@ export default function HomePage() {
 
                 <motion.div
                   className="w-full flex items-center justify-between max-w-[500px] mx-auto"
-                  variants={fadeInUp}
+                  variants={scaleIn}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
                 >
                   <Image
                     src="/images/chat.svg"
@@ -306,7 +328,7 @@ export default function HomePage() {
             and <span className="font-medium text-[#00FF11]">ease</span>.
           </motion.p>
         </div>
-      </motion.section>
+      </section>
 
       <div className="w-full hidden xl:flex lg:flex-col relative">
         <motion.div
@@ -325,7 +347,14 @@ export default function HomePage() {
           />
         </motion.div>
 
-        <section className="bg-[url('/images/map-desktop-bg.svg')] bg-center bg-cover bg-no-repeat w-full z-10 ">
+        <section className="w-full z-10 min-h-screen">
+          <Image
+            src="/images/map-desktop-bg.svg"
+            alt="Background"
+            fill
+            className="object-cover -z-10"
+            quality={100}
+          />
           <h2 className="flex flex-col font-extrabold leading-[190px] text-[#00FF11] relative -top-[12rem] pl-26">
             <span className="text-[210px]">Room</span>
             <span className="text-[240px]">Radar</span>
