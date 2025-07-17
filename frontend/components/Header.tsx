@@ -10,6 +10,16 @@ import {
 import Image from "next/image";
 
 export default function Header() {
+  const scrollToWaitlist = () => {
+    const waitlistSection = document.querySelector("footer");
+    if (waitlistSection) {
+      waitlistSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <header className="bg-[url('/images/header-bg.svg')] bg-center bg-cover bg-no-repeat h-screen flex flex-col relative lg:p-0 p-8 lg:mb-[578px] mb-8">
       <div className="w-full max-w-[1440px]">
@@ -67,6 +77,7 @@ export default function Header() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
               variants={scaleIn}
+              onClick={scrollToWaitlist}
             >
               Join Waitlist
             </motion.button>

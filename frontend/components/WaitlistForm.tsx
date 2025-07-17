@@ -1,0 +1,180 @@
+"use client";
+import { motion } from "framer-motion";
+import { fadeInUp, scaleIn } from "./animations/motion";
+import { supabase } from "@/utils/SupabaseClient";
+import { useState } from "react";
+import { ClipLoader } from "react-spinners";
+
+export function WaitListForm() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState({ type: "", text: "" });
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+    // Clear any previous messages when user starts typing
+    if (message.text) {
+      setMessage({ type: "", text: "" });
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    // Basic validation
+    if (!formData.name.trim()) {
+      setMessage({ type: "error", text: "Please enter your name" });
+      return;
+    }
+
+    if (!formData.email.trim()) {
+      setMessage({ type: "error", text: "Please enter your email" });
+      return;
+    }
+
+    if (!validateEmail(formData.email)) {
+      setMessage({ type: "error", text: "Please enter a valid email address" });
+      return;
+    }
+
+    setIsSubmitting(true);
+    setMessage({ type: "", text: "" });
+
+    try {
+      const { error } = await supabase.from("roomradar_waitlist").insert([
+        {
+          name: formData.name.trim(),
+          email: formData.email.trim().toLowerCase(),
+        },
+      ]);
+
+      if (error) {
+        if (error.code === "23505") {
+          setMessage({
+            type: "error",
+            text: "This email is already on our waitlist!",
+          });
+        } else {
+          setMessage({
+            type: "error",
+            text: "Something went wrong. Please try again.",
+          });
+        }
+        console.error("Supabase error:", error);
+      } else {
+        setMessage({
+          type: "success",
+          text: "Successfully joined the waitlist! We'll notify you when we launch.",
+        });
+        setFormData({ name: "", email: "" });
+      }
+    } catch (error) {
+      console.error("Network error:", error);
+      setMessage({
+        type: "error",
+        text: "Network error. Please check your connection and try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <motion.form
+      className="max-w-[1440px] mx-auto space-y-12 lg:space-y-16 mt-[52px] w-full px-4 xl:px-[145px]"
+      variants={fadeInUp}
+      onSubmit={handleSubmit}
+    >
+      {message.text && (
+        <motion.div
+          className={`p-4 rounded-lg text-center font-medium ${
+            message.type === "success"
+              ? "bg-green-100 text-green-800 border border-green-200"
+              : "bg-red-100 text-red-800 border border-red-200"
+          }`}
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          {message.text}
+        </motion.div>
+      )}
+
+      <div className="relative">
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value={formData.name}
+          onChange={handleInputChange}
+          required
+          className="peer block w-full border border-[#00FF11] bg-white px-4 py-3 xl:py-5 text-[12.5px] lg:text-2xl xl:text-2xl focus:outline-none focus:border-[#0EC530] transition-colors rounded-[7px] text-black"
+          placeholder=" "
+          autoComplete="name"
+        />
+        <label
+          htmlFor="name"
+          className="absolute left-4 top-1/2 -translate-y-1/2 lg:text-2xl xl:text-[32.13px] text-[12.5px] font-semibold pointer-events-none transition-all duration-200
+                peer-focus:-top-6 peer-focus:text-[#00FF11]
+                peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-[#0EC530]
+                peer-not-placeholder-shown:-top-6 peer-not-placeholder-shown:text-[#00FF11]"
+        >
+          Enter Name
+        </label>
+      </div>
+      <div className="relative">
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value={formData.email}
+          onChange={handleInputChange}
+          required
+          className="peer block w-full border border-[#00FF11] bg-white px-4 py-3 xl:py-5 text-[12.5px] lg:text-2xl xl:text-2xl focus:outline-none focus:border-[#0EC530] transition-colors rounded-[7px] text-black"
+          placeholder=" "
+          autoComplete="email"
+        />
+        <label
+          htmlFor="email"
+          className="absolute left-4 top-1/2 -translate-y-1/2 lg:text-2xl xl:text-[32.13px] text-[12.5px] font-semibold pointer-events-none transition-all duration-200
+                peer-focus:-top-6 peer-focus:text-[#00FF11]
+                peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-[#0EC530]
+                peer-not-placeholder-shown:-top-6 peer-not-placeholder-shown:text-[#00FF11]"
+        >
+          Email
+        </label>
+      </div>
+      <motion.div
+        className="w-full mx-auto flex items-center justify-center hover:cursor-pointer hover:opacity-90"
+        variants={scaleIn}
+      >
+        <motion.button
+          type="submit"
+          disabled={isSubmitting}
+          whileHover={{ scale: isSubmitting ? 1 : 1.05 }}
+          whileTap={{ scale: isSubmitting ? 1 : 0.97 }}
+          variants={scaleIn}
+          className={`font-bold text-base rounded-[10px] py-2 px-4 xl:text-[39px] lg:text-2xl cursor-pointer transition-all duration-200 ${
+            isSubmitting
+              ? "bg-[#00FF11] cursor-not-allowed"
+              : "bg-[#00FF11] hover:opacity-90"
+          }`}
+        >
+          {isSubmitting ? <ClipLoader color="white" /> : "Join Waitlist"}
+        </motion.button>
+      </motion.div>
+    </motion.form>
+  );
+}

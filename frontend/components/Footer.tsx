@@ -7,6 +7,7 @@ import {
   fadeIn,
   scaleIn,
 } from "@/components/animations/motion";
+import { WaitListForm } from "./WaitlistForm";
 
 export default function Footer() {
   return (
@@ -33,64 +34,7 @@ export default function Footer() {
         </p>
       </motion.div>
 
-      <motion.form
-        className="max-w-[1440px] mx-auto space-y-12 lg:space-y-16 mt-[52px] w-full px-4 xl:px-[145px]"
-        variants={fadeInUp}
-      >
-        <div className="relative">
-          <input
-            type="text"
-            id="name"
-            name="name"
-            required
-            className="peer block w-full border border-[#00FF11] bg-white px-4 py-3 xl:py-5 text-[12.5px] lg:text-2xl xl:text-2xl focus:outline-none focus:border-[#0EC530] transition-colors rounded-[7px] text-black"
-            placeholder=" "
-            autoComplete="off"
-          />
-          <label
-            htmlFor="name"
-            className="absolute left-4 top-1/2 -translate-y-1/2 text-[12.5px] pointer-events-none transition-all duration-200
-                peer-focus:-top-6 peer-focus:text-lg xl:peer-focus-2xl peer-focus:text-[#00FF11]
-                peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-lg peer-placeholder-shown:text-[#0EC530] peer-placeholder-shown:text-[12.5px] lg:peer-placeholder-shown:text-2xl xl:peer-placeholder-shown:text-[32.13px]
-                peer-not-placeholder-shown:-top-2 peer-not-placeholder-shown:text-[12.5px] peer-not-placeholder-shown:text-[#00FF11] peer-placeholder-shown:font-semibold"
-          >
-            Enter Name
-          </label>
-        </div>
-        <div className="relative">
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            className="peer block w-full border border-[#00FF11] bg-white px-4 py-3 xl:py-5 text-[12.5px] lg:text-2xl xl:text-2xl focus:outline-none focus:border-[#0EC530] transition-colors rounded-[7px] text-black"
-            placeholder=" "
-            autoComplete="off"
-          />
-          <label
-            htmlFor="email"
-            className="absolute left-4 top-1/2 -translate-y-1/2 text-[12.5px] pointer-events-none transition-all duration-200
-                peer-focus:-top-6 peer-focus:text-lg xl:peer-focus-2xl peer-focus:text-[#00FF11]
-                peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-lg peer-placeholder-shown:text-[#0EC530] peer-placeholder-shown:text-[12.5px] lg:peer-placeholder-shown:text-2xl xl:peer-placeholder-shown:text-[32.13px]
-                peer-not-placeholder-shown:-top-2 peer-not-placeholder-shown:text-[12.5px] peer-not-placeholder-shown:text-[#00FF11] peer-placeholder-shown:font-semibold"
-          >
-            Email
-          </label>
-        </div>
-        <motion.div
-          className="w-full mx-auto flex items-center justify-center hover:cursor-pointer hover:opacity-90"
-          variants={scaleIn}
-        >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-            variants={scaleIn}
-            className="bg-[#00FF11] font-bold text-base rounded-[10px] py-2 px-4 xl:text-[39px] lg:text-2xl cursor-pointer hover:opacity-90"
-          >
-            Join Waitlist
-          </motion.button>
-        </motion.div>
-      </motion.form>
+      <WaitListForm />
 
       <motion.div
         className="flex flex-col gap-5 mt-[91px] bg-[url('/images/footer-bg-img.svg')] bg-cover bg-no-repeat bg-center-bottom-[20rem] right-0 w-full h-[214px] xl:h-[653px] xl:pl-[145px]"
