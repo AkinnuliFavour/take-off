@@ -54,7 +54,7 @@ export default function Footer() {
         </motion.div>
 
         <motion.div
-          className="flex gap-4 lg:gap-8 text-2xl px-4 *:xl:h-[62px] *:xl:w-[62px]"
+          className="flex gap-4 lg:gap-8 text-2xl px-4 *:xl:h-[62px] *:xl:w-[62px] *:cursor-pointer *:hover:opacity-85"
           variants={scaleIn}
         >
           <SiInstagram />

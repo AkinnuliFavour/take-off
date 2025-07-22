@@ -1,8 +1,8 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { fadeInUp, scaleIn } from "./animations/motion";
 import { supabase } from "@/utils/SupabaseClient";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ClipLoader } from "react-spinners";
 
 export function WaitListForm() {
@@ -12,6 +12,26 @@ export function WaitListForm() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState({ type: "", text: "" });
+  const [isMessageVisible, setIsMessageVisible] = useState(true);
+
+  useEffect(() => {
+    if (message.text) {
+      setIsMessageVisible(true);
+
+      const fadeTimer = setTimeout(() => {
+        setIsMessageVisible(false);
+      }, 3000);
+
+      const clearTimer = setTimeout(() => {
+        setMessage({ type: "", text: "" });
+        setIsMessageVisible(true);
+      }, 3500);
+      return () => {
+        clearTimeout(fadeTimer);
+        clearTimeout(clearTimer);
+      };
+    }
+  }, [message]);
 
   const validateEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -97,20 +117,27 @@ export function WaitListForm() {
       variants={fadeInUp}
       onSubmit={handleSubmit}
     >
-      {message.text && (
-        <motion.div
-          className={`p-4 rounded-lg text-center font-medium ${
-            message.type === "success"
-              ? "bg-green-100 text-green-800 border border-green-200"
-              : "bg-red-100 text-red-800 border border-red-200"
-          }`}
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          {message.text}
-        </motion.div>
-      )}
+      <AnimatePresence mode="wait">
+        {message.text && (
+          <motion.div
+            key="message"
+            className={`p-4 rounded-lg text-center font-medium ${
+              message.type === "success"
+                ? "bg-green-100 text-green-800 border border-green-200"
+                : "bg-red-100 text-red-800 border border-red-200"
+            }`}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{
+              opacity: isMessageVisible ? 1 : 0,
+              y: isMessageVisible ? 0 : -10,
+            }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.5 }}
+          >
+            {message.text}
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <div className="relative">
         <input
@@ -157,7 +184,7 @@ export function WaitListForm() {
         </label>
       </div>
       <motion.div
-        className="w-full mx-auto flex items-center justify-center hover:cursor-pointer hover:opacity-90"
+        className="w-full mx-auto flex items-center justify-center hover:cursor-pointer hover:opacity-90 lg:max-w-[289px] max-w-[135px]"
         variants={scaleIn}
       >
         <motion.button
@@ -166,7 +193,7 @@ export function WaitListForm() {
           whileHover={{ scale: isSubmitting ? 1 : 1.05 }}
           whileTap={{ scale: isSubmitting ? 1 : 0.97 }}
           variants={scaleIn}
-          className={`font-bold text-base rounded-[10px] py-2 px-4 xl:text-[39px] lg:text-2xl cursor-pointer transition-all duration-200 ${
+          className={`font-bold text-base rounded-[10px] w-full py-2 xl:text-[39px] lg:text-2xl cursor-pointer transition-all duration-200 ${
             isSubmitting
               ? "bg-[#00FF11] cursor-not-allowed"
               : "bg-[#00FF11] hover:opacity-90"
