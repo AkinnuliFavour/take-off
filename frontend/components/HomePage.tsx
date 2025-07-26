@@ -50,7 +50,7 @@ export default function HomePage() {
       </motion.section>
 
       <motion.p
-        className="mt-[206px] lg:mt-[108px] text-center font-bold text-base lg:text-[40px] mb-[452px] lg:mb-[426px] max-w-[1440px] mx-auto"
+        className="mt-[206px] lg:mt-[108px] text-center font-bold text-base lg:text-[40px] mb-[300px] lg:mb-[200px] max-w-[1440px] mx-auto"
         variants={fadeIn}
         initial="hidden"
         whileInView="visible"

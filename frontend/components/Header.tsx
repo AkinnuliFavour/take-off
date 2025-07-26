@@ -21,7 +21,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-[url('/images/header-bg.svg')] bg-center bg-cover bg-no-repeat h-screen flex flex-col relative lg:p-0 p-8 lg:mb-[578px] mb-8">
+    <header className="bg-[url('/images/header-bg.svg')] bg-center bg-cover bg-no-repeat h-screen flex flex-col relative lg:p-0 p-8 lg:mb-[200px] mb-8">
       <div className="w-full max-w-[1440px]">
         <motion.h1
           className="font-semibold text-xl lg:text-3xl absolute top-8 left-8 lg:left-[92px]"
