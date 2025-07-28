@@ -9,6 +9,7 @@ export function WaitListForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    telephone: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState({ type: "", text: "" });
@@ -38,13 +39,17 @@ export function WaitListForm() {
     return emailRegex.test(email);
   };
 
+  const validatePhone = (phone: string) => {
+    const cleanPhone = phone.replace(/[^\d]/g, "");
+    return cleanPhone.length >= 10 && cleanPhone.length <= 15;
+  };
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
-    // Clear any previous messages when user starts typing
     if (message.text) {
       setMessage({ type: "", text: "" });
     }
@@ -53,7 +58,6 @@ export function WaitListForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Basic validation
     if (!formData.name.trim()) {
       setMessage({ type: "error", text: "Please enter your name" });
       return;
@@ -69,6 +73,19 @@ export function WaitListForm() {
       return;
     }
 
+    if (!formData.telephone.trim()) {
+      setMessage({ type: "error", text: "Please enter your telephone number" });
+      return;
+    }
+
+    if (!validatePhone(formData.telephone)) {
+      setMessage({
+        type: "error",
+        text: "Please enter a valid telephone number",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     setMessage({ type: "", text: "" });
 
@@ -77,6 +94,7 @@ export function WaitListForm() {
         {
           name: formData.name.trim(),
           email: formData.email.trim().toLowerCase(),
+          telephone: formData.telephone.trim(),
         },
       ]);
 
@@ -93,13 +111,38 @@ export function WaitListForm() {
           });
         }
         console.error("Supabase error:", error);
-      } else {
-        setMessage({
-          type: "success",
-          text: "Successfully joined the waitlist! We'll notify you when we launch.",
-        });
-        setFormData({ name: "", email: "" });
+        return;
       }
+
+      try {
+        const response = await fetch("/api/joinwaitlist", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name.trim(),
+            email: formData.email.trim().toLowerCase(),
+            telephone: formData.telephone.trim(),
+          }),
+        });
+
+        if (!response.ok) {
+          console.error(
+            "MailerLite subscription failed:",
+            await response.text()
+          );
+        }
+      } catch (mailerError) {
+        console.error("MailerLite network error:", mailerError);
+      }
+
+      // Show success message regardless of MailerLite result
+      setMessage({
+        type: "success",
+        text: "Successfully joined the waitlist! We'll notify you when we launch.",
+      });
+      setFormData({ name: "", email: "", telephone: "" });
     } catch (error) {
       console.error("Network error:", error);
       setMessage({
@@ -181,6 +224,28 @@ export function WaitListForm() {
                 peer-not-placeholder-shown:-top-6 peer-not-placeholder-shown:text-[#00FF11]"
         >
           Email
+        </label>
+      </div>
+      <div className="relative">
+        <input
+          type="tel"
+          id="telephone"
+          name="telephone"
+          value={formData.telephone}
+          onChange={handleInputChange}
+          required
+          className="peer block w-full border border-[#00FF11] bg-white px-4 py-3 xl:py-5 text-[12.5px] lg:text-2xl xl:text-2xl focus:outline-none focus:border-[#0EC530] transition-colors rounded-[7px] text-black"
+          placeholder=" "
+          autoComplete="tel"
+        />
+        <label
+          htmlFor="telephone"
+          className="absolute left-4 top-1/2 -translate-y-1/2 lg:text-2xl xl:text-[32.13px] text-[12.5px] font-semibold pointer-events-none transition-all duration-200
+                peer-focus:-top-6 peer-focus:text-[#00FF11]
+                peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-[#0EC530]
+                peer-not-placeholder-shown:-top-6 peer-not-placeholder-shown:text-[#00FF11]"
+        >
+          Telephone
         </label>
       </div>
       <motion.div
