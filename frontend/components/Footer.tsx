@@ -62,7 +62,7 @@ export default function Footer() {
           <SiGmail />
         </motion.div>
         <motion.p
-          className="font-extrabold text-[40px] leading-[66px] flex items-center absolute -bottom-4 xl:-bottom-16 right-0 xl:text-[160px]"
+          className="font-extrabold text-[40px] leading-[66px] flex items-center absolute -bottom-4 xl:-bottom-2 right-0 xl:text-[160px] p-4"
           variants={fadeIn}
         >
           <Image

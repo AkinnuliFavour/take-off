@@ -50,7 +50,7 @@ export default function HomePage() {
       </motion.section>
 
       <motion.p
-        className="mt-[206px] lg:mt-[108px] text-center font-bold text-base lg:text-[40px] mb-[300px] lg:mb-[200px] max-w-[1440px] mx-auto"
+        className="mt-[108px] text-center font-bold text-base lg:text-[40px] mb-[100px] max-w-[1440px] mx-auto"
         variants={fadeIn}
         initial="hidden"
         whileInView="visible"
@@ -62,7 +62,7 @@ export default function HomePage() {
       <Testimonials />
 
       <motion.p
-        className="font-medium my-[169px] px-8 flex flex-col w-full text-base leading-12 lg:font-bold lg:text-[31px] lg:leading-[58px] lg:items-start lg:pl-[92px] lg:mt-[321px] lg:gap-5 mb-[356px] lg:mb-[944px] max-w-[1440px] mx-auto"
+        className="font-medium my-[80px] px-8 flex flex-col w-full text-base leading-12 lg:font-bold lg:text-[31px] lg:leading-[58px] lg:items-start lg:pl-[92px] lg:mt-[200px] lg:gap-5 mb-[100px] lg:mb-[700px] max-w-[1440px] mx-auto"
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
