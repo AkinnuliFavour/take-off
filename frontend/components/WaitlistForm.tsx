@@ -98,13 +98,13 @@ export function WaitListForm() {
         },
       ]);
 
-      let supabaseExists = false;
       if (error) {
         if (error.code === "23505") {
-          supabaseExists = true;
-          console.log(
-            "Email already exists in Supabase, checking MailerLite..."
-          );
+          setMessage({
+            type: "error",
+            text: "This email is already on our waitlist!",
+          });
+          return;
         } else {
           setMessage({
             type: "error",
@@ -115,7 +115,6 @@ export function WaitListForm() {
         }
       }
 
-      let mailerLiteExists = false;
       try {
         const response = await fetch("/api/joinwaitlist", {
           method: "POST",
@@ -130,28 +129,13 @@ export function WaitListForm() {
         });
 
         if (!response.ok) {
-          const errorText = await response.text();
-          if (
-            response.status === 422 ||
-            errorText.includes("already exists") ||
-            errorText.includes("duplicate")
-          ) {
-            mailerLiteExists = true;
-            console.log("Email already exists in MailerLite");
-          } else {
-            console.error("MailerLite subscription failed:", errorText);
-          }
+          console.error(
+            "MailerLite subscription failed:",
+            await response.text()
+          );
         }
       } catch (mailerError) {
         console.error("MailerLite network error:", mailerError);
-      }
-
-      if (supabaseExists && mailerLiteExists) {
-        setMessage({
-          type: "error",
-          text: "This email is already on our waitlist!",
-        });
-        return;
       }
 
       setMessage({
