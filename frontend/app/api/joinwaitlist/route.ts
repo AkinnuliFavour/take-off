@@ -13,7 +13,6 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Updated to use MailerLite v3 API
     const res = await fetch("https://connect.mailerlite.com/api/subscribers", {
       method: "POST",
       headers: {

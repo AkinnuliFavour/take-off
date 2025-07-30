@@ -137,7 +137,6 @@ export function WaitListForm() {
         console.error("MailerLite network error:", mailerError);
       }
 
-      // Show success message regardless of MailerLite result
       setMessage({
         type: "success",
         text: "Successfully joined the waitlist! We'll notify you when we launch.",
@@ -156,7 +155,7 @@ export function WaitListForm() {
 
   return (
     <motion.form
-      className="max-w-[1440px] mx-auto space-y-12 lg:space-y-16 mt-[52px] w-full px-4 xl:px-[145px]"
+      className="max-w-[1440px] mx-auto space-y-6 lg:space-y-16 mt-[52px] w-full px-4 xl:px-[145px]"
       variants={fadeInUp}
       onSubmit={handleSubmit}
     >
@@ -190,13 +189,13 @@ export function WaitListForm() {
           value={formData.name}
           onChange={handleInputChange}
           required
-          className="peer block w-full border border-[#00FF11] bg-white px-4 py-3 xl:py-5 text-[12.5px] lg:text-2xl xl:text-2xl focus:outline-none focus:border-[#0EC530] transition-colors rounded-[7px] text-black"
-          placeholder=" "
+          className="peer block w-full border border-[#00FF11] bg-white px-4 py-3 xl:py-5 text-[12.5px] lg:text-2xl xl:text-2xl focus:outline-none focus:border-[#0EC530] transition-colors rounded-[7px] text-black lg:placeholder-transparent"
+          placeholder="Enter Name"
           autoComplete="name"
         />
         <label
           htmlFor="name"
-          className="absolute left-4 top-1/2 -translate-y-1/2 lg:text-2xl xl:text-[32.13px] text-[12.5px] font-semibold pointer-events-none transition-all duration-200
+          className="absolute left-4 top-1/2 -translate-y-1/2 lg:text-2xl xl:text-[32.13px] text-[12.5px] font-semibold pointer-events-none transition-all duration-200 hidden lg:block
                 peer-focus:-top-6 peer-focus:text-[#00FF11]
                 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-[#0EC530]
                 peer-not-placeholder-shown:-top-6 peer-not-placeholder-shown:text-[#00FF11]"
@@ -212,13 +211,13 @@ export function WaitListForm() {
           value={formData.email}
           onChange={handleInputChange}
           required
-          className="peer block w-full border border-[#00FF11] bg-white px-4 py-3 xl:py-5 text-[12.5px] lg:text-2xl xl:text-2xl focus:outline-none focus:border-[#0EC530] transition-colors rounded-[7px] text-black"
-          placeholder=" "
+          className="peer block w-full border border-[#00FF11] bg-white px-4 py-3 xl:py-5 text-[12.5px] lg:text-2xl xl:text-2xl focus:outline-none focus:border-[#0EC530] transition-colors rounded-[7px] text-black lg:placeholder-transparent"
+          placeholder="Email"
           autoComplete="email"
         />
         <label
           htmlFor="email"
-          className="absolute left-4 top-1/2 -translate-y-1/2 lg:text-2xl xl:text-[32.13px] text-[12.5px] font-semibold pointer-events-none transition-all duration-200
+          className="absolute left-4 top-1/2 -translate-y-1/2 lg:text-2xl xl:text-[32.13px] text-[12.5px] font-semibold pointer-events-none transition-all duration-200 hidden lg:block
                 peer-focus:-top-6 peer-focus:text-[#00FF11]
                 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-[#0EC530]
                 peer-not-placeholder-shown:-top-6 peer-not-placeholder-shown:text-[#00FF11]"
@@ -234,13 +233,13 @@ export function WaitListForm() {
           value={formData.telephone}
           onChange={handleInputChange}
           required
-          className="peer block w-full border border-[#00FF11] bg-white px-4 py-3 xl:py-5 text-[12.5px] lg:text-2xl xl:text-2xl focus:outline-none focus:border-[#0EC530] transition-colors rounded-[7px] text-black"
-          placeholder=" "
+          className="peer block w-full border border-[#00FF11] bg-white px-4 py-3 xl:py-5 text-[12.5px] lg:text-2xl xl:text-2xl focus:outline-none focus:border-[#0EC530] transition-colors rounded-[7px] text-black lg:placeholder-transparent"
+          placeholder="Telephone"
           autoComplete="tel"
         />
         <label
           htmlFor="telephone"
-          className="absolute left-4 top-1/2 -translate-y-1/2 lg:text-2xl xl:text-[32.13px] text-[12.5px] font-semibold pointer-events-none transition-all duration-200
+          className="absolute left-4 top-1/2 -translate-y-1/2 lg:text-2xl xl:text-[32.13px] text-[12.5px] font-semibold pointer-events-none transition-all duration-200 hidden lg:block
                 peer-focus:-top-6 peer-focus:text-[#00FF11]
                 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-[#0EC530]
                 peer-not-placeholder-shown:-top-6 peer-not-placeholder-shown:text-[#00FF11]"

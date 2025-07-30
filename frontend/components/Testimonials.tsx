@@ -275,7 +275,7 @@ export default function Testimonials() {
       </motion.div>
 
       <div
-        className="flex flex-col xl:hidden mt-[100px] gap-[8rem] max-w-xl mx-auto"
+        className="flex flex-col xl:hidden mt-[200px] gap-[8rem] max-w-xl mx-auto"
         style={{ visibility: "visible", opacity: 1 }}
       >
         <div className="w-full relative">
