@@ -101,7 +101,6 @@ export function WaitListForm() {
       let supabaseExists = false;
       if (error) {
         if (error.code === "23505") {
-          // Email exists in Supabase, but continue to check MailerLite
           supabaseExists = true;
           console.log(
             "Email already exists in Supabase, checking MailerLite..."
@@ -132,7 +131,6 @@ export function WaitListForm() {
 
         if (!response.ok) {
           const errorText = await response.text();
-          // Check if MailerLite indicates email already exists
           if (
             response.status === 422 ||
             errorText.includes("already exists") ||
@@ -148,7 +146,6 @@ export function WaitListForm() {
         console.error("MailerLite network error:", mailerError);
       }
 
-      // Only show "already on waitlist" if email exists in BOTH systems
       if (supabaseExists && mailerLiteExists) {
         setMessage({
           type: "error",
@@ -157,7 +154,6 @@ export function WaitListForm() {
         return;
       }
 
-      // Show success message if email was added to at least one system or doesn't exist in both
       setMessage({
         type: "success",
         text: "Successfully joined the waitlist! We'll notify you when we launch.",
