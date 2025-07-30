@@ -98,22 +98,25 @@ export function WaitListForm() {
         },
       ]);
 
+      let supabaseExists = false;
       if (error) {
         if (error.code === "23505") {
-          setMessage({
-            type: "error",
-            text: "This email is already on our waitlist!",
-          });
+          // Email exists in Supabase, but continue to check MailerLite
+          supabaseExists = true;
+          console.log(
+            "Email already exists in Supabase, checking MailerLite..."
+          );
         } else {
           setMessage({
             type: "error",
             text: "Something went wrong. Please try again.",
           });
+          console.error("Supabase error:", error);
+          return;
         }
-        console.error("Supabase error:", error);
-        return;
       }
 
+      let mailerLiteExists = false;
       try {
         const response = await fetch("/api/joinwaitlist", {
           method: "POST",
@@ -128,15 +131,33 @@ export function WaitListForm() {
         });
 
         if (!response.ok) {
-          console.error(
-            "MailerLite subscription failed:",
-            await response.text()
-          );
+          const errorText = await response.text();
+          // Check if MailerLite indicates email already exists
+          if (
+            response.status === 422 ||
+            errorText.includes("already exists") ||
+            errorText.includes("duplicate")
+          ) {
+            mailerLiteExists = true;
+            console.log("Email already exists in MailerLite");
+          } else {
+            console.error("MailerLite subscription failed:", errorText);
+          }
         }
       } catch (mailerError) {
         console.error("MailerLite network error:", mailerError);
       }
 
+      // Only show "already on waitlist" if email exists in BOTH systems
+      if (supabaseExists && mailerLiteExists) {
+        setMessage({
+          type: "error",
+          text: "This email is already on our waitlist!",
+        });
+        return;
+      }
+
+      // Show success message if email was added to at least one system or doesn't exist in both
       setMessage({
         type: "success",
         text: "Successfully joined the waitlist! We'll notify you when we launch.",
